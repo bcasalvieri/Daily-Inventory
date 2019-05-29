@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const EntrySchema = new Schema({
+  postedBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: User
+  },
   created: new Date(),
   resentful: {
     type: Boolean,
@@ -47,4 +51,4 @@ const EntrySchema = new Schema({
   sobrietyNote: String,
 });
 
-module.exports = mongoose.model("entry", EntrySchema);
+module.exports = mongoose.model("Entry", EntrySchema);
