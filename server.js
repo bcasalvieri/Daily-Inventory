@@ -1,6 +1,5 @@
 const express = require('express');
-const authRoutes = require('./routes/auth-routes');
-const profileRoutes = require('./routes/profile-routes');
+const routes = require('./routes');
 const passportSetup = require('./middleware/passport-setup');
 const mongoose = require('mongoose');
 require('dotenv').config();
@@ -29,8 +28,7 @@ mongoose.connect(mongoUri, {
 });
 
 // set up routes
-app.use('/auth', authRoutes);
-app.use('/profile', profileRoutes);
+app.use(routes);
 
 // create home route
 app.get('/', (req, res) => {
