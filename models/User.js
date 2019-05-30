@@ -8,16 +8,17 @@ const UserSchema = new Schema({
     trim: true,
     required: true
   },
+  googleId: String,
   email: {
     type: String,
     required: true,
     unique: true,
-    match: [/.+@.+\../, "Please use a valide email address!"]
+    match: [/.+@.+\../, "A valid email address must be used!"]
   },
-  password: {
-    type: String,
-    required: true
-  }
+  entries: [{
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'Entry'
+  }]
 });
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model('user', UserSchema);
