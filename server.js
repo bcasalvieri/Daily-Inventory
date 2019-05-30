@@ -3,7 +3,7 @@ const authRoutes = require('./routes/auth-routes');
 const profileRoutes = require('./routes/profile-routes');
 const passportSetup = require('./middleware/passport-setup');
 const mongoose = require('mongoose');
-const keys = require('./middleware/keys');
+require('dotenv').config();
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 
@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 
 app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000,
-  keys: [keys.session.cookieKey]
+  keys: [process.env.COOKIE_KEY]
 }));
 
 // initialize passport
