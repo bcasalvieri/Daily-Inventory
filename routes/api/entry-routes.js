@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const authCheck = require('../../middleware/authentication');
 const {
   createEntry,
   getAllEntries,
@@ -6,6 +7,9 @@ const {
   updateEntry,
   deleteEntry
 } = require('../../controllers/entry-controller');
+
+// set up authentication middleware for these routes
+// router.use(authCheck);
 
 // GET and POST routes for /api/entry
 router
