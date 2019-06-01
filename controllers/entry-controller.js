@@ -68,7 +68,7 @@ const getEntryById = async (req, res) => {
 // **********
 // UPDATE/PUT a note by its _id
 // **********
-const updateEntry = (req, res) => {
+const updateEntry = async (req, res) => {
   const [entryFindErr, entryData] = await handle(Entry.findByIdAndUpdate(
     req.params.id,
     {
@@ -90,7 +90,7 @@ const updateEntry = (req, res) => {
 // **********
 // DELETE/REMOVE a note by its _id
 // **********
-const deleteEntry = (req, res) => {
+const deleteEntry = async (req, res) => {
   const [entryFindErr, entryData] = await handle(Entry.findByIdAndDelete(req.params.id));
 
   if (entryFindErr) {
