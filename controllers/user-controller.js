@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../models');
-const handler = require('../utils/promise-handler');
+const handle = require('../utils/promise-handler');
 
 // GET user profile
 const getUserProfile = async (req, res) => {

@@ -1,27 +1,21 @@
 const router = require('express').Router();
 const passport = require('passport');
 
-// auth login
-router
-  .route('/login')
-  .get((req, res) => {
-    res.render('login', {user: req.user});
-  });
-
 // auth logout
 router
   .route('/logout')
   .get((req, res) => {
   // handle with passport
+    let redirectPath = (process.env.NODE_ENV === "production") ? "/" : "http://localhost:3000"
     req.logout();
-    res.redirect('/');
+    res.redirect(redirectPath);
   });
 
 // auth with google
 router
   .route('/google')
   .get(passport.authenticate('google', {
-    scope: ['profile', 'email']
+    scope: ['profile email']
     }
   ));
 
@@ -29,8 +23,10 @@ router
 router
   .route('/google/redirect')
   .get(passport.authenticate('google'), (req, res) => {
-    res.json(req.user);
-    // res.redirect('/profile/');
+    let redirectPath = (process.env.NODE_ENV === "production") ? "/" : "http://localhost:3000"
+    redirectPath = `${redirectPath}/?userId=${req.user._id}`;
+    // res.json(req.user);
+    res.redirect(redirectPath);
   });
 
 module.exports = router;

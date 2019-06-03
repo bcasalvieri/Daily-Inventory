@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // set up view engine
 app.set('view engine', 'ejs');
@@ -33,11 +33,6 @@ mongoose.connect(mongoUri, {
 
 // set up routes
 app.use(routes);
-
-// create home route
-app.get('/', (req, res) => {
-  res.render('home', {user: req.user});
-});
 
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
