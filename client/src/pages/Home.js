@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron } from "react-bootstrap";
+import { Jumbotron, Dropdown, DropdownButton } from "react-bootstrap";
 import styled from 'styled-components';
 import BackgroundImg from '../images/background-calm-clouds-747964.jpg';
 import Navbar from '../components/Navbar';
@@ -10,6 +10,8 @@ const MyJumbotron = styled(Jumbotron)`
   background-image: url('${BackgroundImg}');
   background-size: cover;
   margin: 0;
+  display: flex;
+  justify-content: center;
 `;
 
 class Home extends Component {
@@ -19,7 +21,7 @@ class Home extends Component {
     id: "",
     firstName: "",
     email: ""
-  }
+  };
 
   componentDidMount() {
     // read from url bar
@@ -34,9 +36,8 @@ class Home extends Component {
           entries: userData.entries,
           isLoggedIn: true
         });
-      })
-    }
-    else {
+      });
+    } else {
       this.setState({
         isLoggedIn:false
       })
@@ -48,11 +49,11 @@ class Home extends Component {
       <div>
         <Navbar isLoggedIn={this.state.isLoggedIn} name={this.state.firstName} />
         <MyJumbotron>
-          
+          <h1 className='display-1' style={{marginTop: 100, color: 'darkslategray'}}>Daily Inventory</h1>
         </MyJumbotron>
       </div>
     )
-  }
-}
+  };
+};
 
 export default Home;

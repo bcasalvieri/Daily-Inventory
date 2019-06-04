@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // getUserProfile
-export const getUserProfile = () => {
+export const getUserProfile = (userId) => {
   return axios.get('/api/user')
 };
 
@@ -11,7 +11,7 @@ export const createEntry = (entryInfo) => {
 };
 
 // getAllEntries
-export const getAllEntries = () => {
+export const getAllEntries = (userId) => {
   return axios.get('/api/entry');
 };
 
