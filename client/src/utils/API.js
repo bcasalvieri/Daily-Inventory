@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // getUserProfile
-export const getUserProfile = (userId) => {
+export const getUserProfile = () => {
   return axios.get('/api/user')
 };
 
@@ -11,9 +11,9 @@ export const createEntry = (entryInfo) => {
 };
 
 // getAllEntries
-export const getAllEntries = (userId) => {
-  return axios.get('/api/entry');
-};
+// export const getAllEntries = () => {
+//   return axios.get('/api/entry');
+// };
 
 // getEntryById
 export const getEntryById = (entryId) => {
@@ -33,7 +33,7 @@ export const deleteEntry = (entryId) => {
 export default {
   getUserProfile,
   createEntry,
-  getAllEntries,
+  // getAllEntries,
   getEntryById,
   updateEntry,
   deleteEntry

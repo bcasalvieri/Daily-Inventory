@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Jumbotron } from "react-bootstrap";
 import styled from 'styled-components';
 import BackgroundImg from '../images/background-calm-clouds-747964.jpg';
@@ -42,6 +43,12 @@ class Home extends Component {
   };
 
   render() {
+
+    // if user is logged in (isLoggedIn is true), redirect to /home
+    if (this.context.isLoggedIn) {
+      return <Redirect to='/home' />
+    };
+
     return (
       <div>
         <MyJumbotron>

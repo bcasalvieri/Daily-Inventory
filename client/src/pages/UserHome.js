@@ -1,15 +1,32 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import EntriesListGroup from '../components/EntriesListGroup';
+import Sidebar from '../components/Sidebar';
+// import Main from '../components/Main';
+import styled from 'styled-components';
 
-export default function UserHome() {
+const Wrapper = styled(Container)`
+  position: relative;
+  top: 56px;
+  padding: 25px 0;
+`;
+
+function UserHome() {
   return (
     <React.Fragment>
-      <Container>
+      <Wrapper>
         <Row>
-          <Col md={3}>This is the sidebar</Col>
-          <Col md={9}>This is the main section</Col>
+          <Col md={3}>
+            <Sidebar />
+          </Col>
+          <Col md={9}>
+            <h2>All Saved Entries</h2>
+            <EntriesListGroup />
+          </Col>
         </Row>
-      </Container>
+      </Wrapper>
     </React.Fragment>
   )
 }
+
+export default UserHome; 
