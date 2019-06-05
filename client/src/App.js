@@ -24,8 +24,8 @@ class App extends React.Component {
         entries: userData.entries
       });
     },
-    handleDeleteNote: (noteId) => {
-      deleteEntry(noteId)
+    handleDeleteEntry: (entryId) => {
+      deleteEntry(entryId)
         .then(getUserProfile)
         .then(({ data: {entries} }) => {
           this.setState({entries})

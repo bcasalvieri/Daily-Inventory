@@ -18,7 +18,7 @@ function EntriesListGroup() {
                   key={entry._id}
                   id={entry._id}
                   create={entry.created}
-                  handleDelete={userContext.handleDeleteNote}
+                  handleDelete={userContext.handleDeleteEntry}
                 />
               )
             }))
