@@ -5,6 +5,7 @@ import UserHome from './pages/UserHome';
 import AddUpdateEntry from './pages/AddUpdateEntry';
 import Navbar from './components/Navbar';
 import UserContext from './utils/UserContext';
+import { deleteEntry, getUserProfile } from './utils/API';
 
 class App extends React.Component {
   
@@ -19,9 +20,19 @@ class App extends React.Component {
         id: userData._id,
         firstName: userData.firstName,
         email: userData.email,
-        entries: userData.entries,
-        isLoggedIn: true
+        isLoggedIn: true,
+        entries: userData.entries
       });
+    },
+    handleDeleteNote: (noteId) => {
+      deleteEntry(noteId)
+        .then(getUserProfile)
+        .then(({ data: {entries} }) => {
+          this.setState({entries})
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
     setLogout: () => {
       this.setState({

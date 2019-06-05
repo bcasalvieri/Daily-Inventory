@@ -1,16 +1,6 @@
 import React, { useContext } from 'react';
 import UserContext from '../utils/UserContext';
 import { ListGroup } from 'react-bootstrap';
-import styled from 'styled-components';
-
-const ListGroupItem = styled(ListGroup.Item)`
-  background-color: red;
-  padding: 10px;
-  border: none;
-  &:hover {
-    background-color: blue;
-  }
-`;
 
 function Sidebar() {
 

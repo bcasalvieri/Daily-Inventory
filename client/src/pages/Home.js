@@ -4,7 +4,7 @@ import { Jumbotron } from "react-bootstrap";
 import styled from 'styled-components';
 import BackgroundImg from '../images/background-calm-clouds-747964.jpg';
 import UserContext from '../utils/UserContext';
-import {getUserProfile} from "../utils/API";
+import { getUserProfile } from "../utils/API";
 
 
 const MyJumbotron = styled(Jumbotron)`
@@ -34,7 +34,7 @@ class Home extends Component {
 
     if (userId) {
       getUserProfile(userId)
-        .then(({ data: userData}) => {
+        .then(({ data: userData }) => {
           this.context.setLogin(userData);
         });
     } else {

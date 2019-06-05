@@ -17,7 +17,7 @@ const createEntry = async (req, res) => {
   
   return User.findOneAndUpdate(
     {
-      _id: "5cf00327348e3808b4427313"
+      _id: req.user._id
     },
     {
       $push: { entries: entryData._id }
@@ -34,20 +34,6 @@ const createEntry = async (req, res) => {
     .catch((err) => {
       return res.json(err);
     });
-};
-
-
-// **********
-// READ/GET all entries for a user
-// **********
-const getAllEntries = async (req, res) => {
-  const [userErr, entryData] = await handle(User.findById(req.user._id).populate('entries'));
-
-  if (userErr) {
-    return res.status(500).json(userErr)
-  };
-
-  return res.status(200).json(entryData)
 };
 
 
@@ -103,7 +89,6 @@ const deleteEntry = async (req, res) => {
 
 module.exports = {
   createEntry,
-  getAllEntries,
   getEntryById,
   updateEntry,
   deleteEntry

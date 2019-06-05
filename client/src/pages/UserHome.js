@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import EntriesListGroup from '../components/EntriesListGroup';
 import Sidebar from '../components/Sidebar';
-// import Main from '../components/Main';
 import styled from 'styled-components';
 
 const Wrapper = styled(Container)`
@@ -12,6 +11,7 @@ const Wrapper = styled(Container)`
 `;
 
 function UserHome() {
+
   return (
     <React.Fragment>
       <Wrapper>

@@ -7,6 +7,10 @@ const EntrySchema = new Schema({
     type: Date,
     default: Date.now
   },
+  author: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: 'User'
+  },
   resentful: {
     type: Boolean,
     required: true
@@ -49,4 +53,4 @@ const EntrySchema = new Schema({
   sobrietyNote: String,
 });
 
-module.exports = mongoose.model('entry', EntrySchema);
+module.exports = mongoose.model('Entry', EntrySchema);

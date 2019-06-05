@@ -4,7 +4,7 @@ const handle = require('../utils/promise-handler');
 
 // GET user profile
 const getUserProfile = async (req, res) => {
-  const [userErr, userProfile] = await handle(User.findById(req.user._id));
+  const [userErr, userProfile] = await handle(User.findById(req.user._id).populate('entries'));
 
   if (userErr) {
     res.status(500).json(userErr);
@@ -14,6 +14,6 @@ const getUserProfile = async (req, res) => {
 };
 
 module.exports = {
-  getUserProfile
+  getUserProfile,
 };
  

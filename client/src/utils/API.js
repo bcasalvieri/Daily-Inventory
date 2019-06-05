@@ -33,7 +33,6 @@ export const deleteEntry = (entryId) => {
 export default {
   getUserProfile,
   createEntry,
-  // getAllEntries,
   getEntryById,
   updateEntry,
   deleteEntry
