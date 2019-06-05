@@ -91,6 +91,21 @@ class AddUpdateEntry extends Component {
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
+
+    this.setState({
+      [name]:  value
+    });
+  };
+  
+  handleRadioInputChange = (event) => {
+    let { name, value } = event.target;
+
+    if (value === "true") {
+      value = true;
+    }  else {
+      value = false;
+    }
+
     this.setState({
       [name]:  value
     });
@@ -168,16 +183,19 @@ class AddUpdateEntry extends Component {
                           type='radio'
                           id='default-radio'
                           label='Yes'
-                          value='true'
+                          value={true}
                           name={question.name}
+                          onChange={this.handleRadioInputChange}
+                          checked={this.state[question.name]}
                           />
                         <Form.Check
                           type='radio'
                           id='default-radio'
                           label='No'
-                          value='false'
+                          value={false}
                           name={question.name}
-                          defaultChecked
+                          onChange={this.handleRadioInputChange}
+                          checked={!this.state[question.name] || this.state[question.name] === ''}
                           />
                         </Form.Group>
                         <Form.Group>
@@ -185,7 +203,9 @@ class AddUpdateEntry extends Component {
                           <Form.Control
                             as='textarea'
                             rows='2'
-                            name={`${question.name}Note`}
+                            onChange={this.handleInputChange}
+                            name={question.note}
+                            value={this.state[question.note]}
                             />
                         </Form.Group>
                       </React.Fragment>
