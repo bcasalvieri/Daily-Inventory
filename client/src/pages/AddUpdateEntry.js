@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { getEntryById, createEntry, updateEntry } from '../utils/API';
-import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Container, Col, Form, Button } from 'react-bootstrap';
 import Sidebar from '../components/Sidebar';
 import styled from 'styled-components';
 import questionsJSON from '../questionsJSON';
@@ -12,25 +12,30 @@ const Wrapper = styled(Container)`
   padding: 25px 0;
 `;
 
+const StyledFormLabel = styled(Form.Label)`
+  font-size: 1.25rem;
+  color: red;
+`;
+
 class AddUpdateEntry extends Component {
 
   state = {
     id: '',
-    resentful: '',
+    resentful: false,
     resentfulNote: '',
-    selfish: '',
+    selfish: false,
     selfishNote: '',
-    dishonest: '',
+    dishonest: false,
     dishonestNote: '',
-    afraid: '',
+    afraid: false,
     afraidNote: '',
-    patient: '',
+    patient: false,
     patientNote: '',
-    apology: '',
+    apology: false,
     apologyNote: '',
-    prayer: '',
+    prayer: false,
     prayerNote: '',
-    sobriety: '',
+    sobriety: false,
     sobrietyNote: '',
     entrySaved: false,
   }
@@ -39,32 +44,32 @@ class AddUpdateEntry extends Component {
     // if an id was passed in url get entry info back
     if (this.props.match.params.id) {
       // extract entryId from url param
-     const entryId = this.props.match.params.id
+      const entryId = this.props.match.params.id
 
-     getEntryById(entryId)
-      .then(({ data: entryData }) => {
-        this.setState({
-          id: entryData._id,
-          resentful: entryData.resentful,
-          resentfulNote: entryData.resentfulNote,
-          selfish: entryData.selfish,
-          selfishNote: entryData.selfishNote,
-          dishonest: entryData.dishonest,
-          dishonestNote: entryData.dishonestNote,
-          afraid: entryData.afraid,
-          afraidNote: entryData.afraidNote,
-          patient: entryData.patient,
-          patientNote: entryData.patientNote,
-          apology: entryData.apology,
-          apologyNote: entryData.apologyNote,
-          prayer: entryData.prayer,
-          prayerNote: entryData.prayerNote,
-          sobriety: entryData.sobriety,
-          sobrietyNote: entryData.sobrietyNote
+      getEntryById(entryId)
+        .then(({ data: entryData }) => {
+          this.setState({
+            id: entryData._id,
+            resentful: entryData.resentful,
+            resentfulNote: entryData.resentfulNote,
+            selfish: entryData.selfish,
+            selfishNote: entryData.selfishNote,
+            dishonest: entryData.dishonest,
+            dishonestNote: entryData.dishonestNote,
+            afraid: entryData.afraid,
+            afraidNote: entryData.afraidNote,
+            patient: entryData.patient,
+            patientNote: entryData.patientNote,
+            apology: entryData.apology,
+            apologyNote: entryData.apologyNote,
+            prayer: entryData.prayer,
+            prayerNote: entryData.prayerNote,
+            sobriety: entryData.sobriety,
+            sobrietyNote: entryData.sobrietyNote
+          })
         })
-      })
-      .catch(err => console.log(err));
-   };
+        .catch(err => console.log(err));
+    };
   };
 
   handleCreateEntry = (entryInfo) => {
@@ -93,21 +98,21 @@ class AddUpdateEntry extends Component {
     const { name, value } = event.target;
 
     this.setState({
-      [name]:  value
+      [name]: value
     });
   };
-  
+
   handleRadioInputChange = (event) => {
     let { name, value } = event.target;
 
     if (value === "true") {
       value = true;
-    }  else {
+    } else {
       value = false;
     }
 
     this.setState({
-      [name]:  value
+      [name]: value
     });
   };
 
@@ -117,7 +122,7 @@ class AddUpdateEntry extends Component {
     // if entry id is present (updating an entry), run update method
     // else run the create method
     if (this.state.id) {
-      this.handleUpdateEntry(this.state.id, {
+       this.handleUpdateEntry(this.state.id, {
         resentful: this.state.resentful,
         resentfulNote: this.state.resentfulNote,
         selfish: this.state.selfish,
@@ -136,7 +141,7 @@ class AddUpdateEntry extends Component {
         sobrietyNote: this.state.sobrietyNote
       });
     } else {
-      this.handleCreateEntry({
+       this.handleCreateEntry({
         resentful: this.state.resentful,
         resentfulNote: this.state.resentfulNote,
         selfish: this.state.selfish,
@@ -155,6 +160,7 @@ class AddUpdateEntry extends Component {
         sobrietyNote: this.state.sobrietyNote
       });
     };
+
   };
 
   render() {
@@ -165,60 +171,65 @@ class AddUpdateEntry extends Component {
 
     return (
       <React.Fragment>
-        <Wrapper>
-          <Row>
-            <Col md={3}>
-              <Sidebar />
-            </Col>
-            <Col md={9}>
-              <h2>{(this.state.id) ? "Update your inventory!" : "Add new inventory!" }</h2>
-              <Form>
-                {
-                  questionsJSON.map(question => {
-                    return (
-                      <React.Fragment>
-                        <Form.Group>
-                        <Form.Label>{question.question}</Form.Label>
+        <Wrapper className='d-flex justify-content-center'>
+          <Col md={8} lg={6}>
+            <h2>{(this.state.id) ? "Update your inventory!" : "Add new inventory!"}</h2>
+            <Form onSubmit={this.handleFormSubmit}>
+              {
+                questionsJSON.map(question => {
+                  return (
+                    <React.Fragment>
+                      <Form.Group className='m-0'>
+                        <Form.Label className='mr-3'>{question.question}</Form.Label>
                         <Form.Check
-                          type='radio'
-                          id='default-radio'
+                          type='checkbox'
+                          id=''
                           label='Yes'
-                          value={true}
+                          value='true'
                           name={question.name}
                           onChange={this.handleRadioInputChange}
                           checked={this.state[question.name]}
-                          />
+                          inline
+                        />
                         <Form.Check
-                          type='radio'
-                          id='default-radio'
+                          type='checkbox'
+                          id=''
                           label='No'
-                          value={false}
+                          value='false'
                           name={question.name}
                           onChange={this.handleRadioInputChange}
                           checked={!this.state[question.name] || this.state[question.name] === ''}
-                          />
-                        </Form.Group>
-                        <Form.Group>
-                          <Form.Label>Optional Notes:</Form.Label>
-                          <Form.Control
-                            as='textarea'
-                            rows='2'
-                            onChange={this.handleInputChange}
-                            name={question.note}
-                            value={this.state[question.note]}
-                            />
-                        </Form.Group>
-                      </React.Fragment>
-                    )
-                  })  
+                          inline
+                        />
+                        <Form.Control
+                          as='textarea'
+                          rows='2'
+                          onChange={this.handleInputChange}
+                          name={question.note}
+                          value={this.state[question.note]}
+                          placeholder='Optional Notes'
+                          className='mb-4'
+                        />
+                      </Form.Group>
+                    </React.Fragment>
+                  )
+                })
+              }
+              <Button type='submit' variant='success'>
+                {
+                  (this.state.id)
+                    ? 'Update Inventory'
+                    : 'Save Inventory'
                 }
-              </Form>
-            </Col>
-          </Row>
+              </Button>
+            </Form>
+          </Col>
         </Wrapper>
       </React.Fragment>
     )
   }
 }
+
+
 
 export default AddUpdateEntry;

@@ -51,9 +51,7 @@ class Home extends Component {
 
     return (
       <div>
-        <MyJumbotron>
-          <MyHeader className='display-1'>Daily Inventory</MyHeader>
-        </MyJumbotron>
+        <MyJumbotron></MyJumbotron>
       </div>
     )
   }

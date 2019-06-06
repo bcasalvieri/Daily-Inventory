@@ -34,6 +34,15 @@ class App extends React.Component {
           console.log(err);
         });
     },
+    getEntries: () => {
+      getUserProfile()
+        .then(({data: {entries}}) => {
+          this.setState({entries})
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     setLogout: () => {
       this.setState({
         isLoggedIn: false

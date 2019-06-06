@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import UserContext from '../utils/UserContext';
 import EntryListGroupItem from './EntryListGroupItem';
 import { ListGroup } from 'react-bootstrap';
@@ -6,6 +6,10 @@ import { ListGroup } from 'react-bootstrap';
 function EntriesListGroup() {
   
   const userContext = useContext(UserContext);
+
+  useEffect(() => {
+    userContext.getEntries();
+  }, []);
 
   return (
     <div>
