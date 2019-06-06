@@ -30,10 +30,15 @@ export const deleteEntry = (entryId) => {
   return axios.delete(`/api/entry/${entryId}`);
 };
 
+export const loginCheck = () => {
+  return axios.get('/auth/status');
+}
+
 export default {
   getUserProfile,
   createEntry,
   getEntryById,
   updateEntry,
-  deleteEntry
+  deleteEntry,
+  loginCheck
 };

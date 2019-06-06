@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import React from 'react';
+import { Container, Row, Col, CardGroup } from 'react-bootstrap';
 import EntriesListGroup from '../components/EntriesListGroup';
+import EntriesCard from '../components/EntriesCard';
 import Sidebar from '../components/Sidebar';
 import styled from 'styled-components';
-import { getUserProfile } from '../utils/API';
 
 const Wrapper = styled(Container)`
   position: relative;
@@ -11,27 +11,23 @@ const Wrapper = styled(Container)`
   padding: 25px 0;
 `;
 
-class UserHome extends Component {
+function UserHome() {
 
-  
-
-  render() {
-    return (
-      <React.Fragment>
-        <Wrapper>
-          <Row>
-            <Col md={3}>
-              <Sidebar />
-            </Col>
-            <Col md={9}>
-              <h2>All Saved Inventories</h2>
-              <EntriesListGroup />
-            </Col>
-          </Row>
-        </Wrapper>
-      </React.Fragment>
-    )
-  }
+  return (
+    <React.Fragment>
+      <Wrapper>
+        <Row>
+          <Col md={3}>
+            <Sidebar />
+          </Col>
+          <Col md={9}>
+            <h2 className='text-center'>All Saved Inventories</h2>
+            <EntriesListGroup />
+          </Col>
+        </Row>
+      </Wrapper>
+    </React.Fragment>
+  )
 }
 
 

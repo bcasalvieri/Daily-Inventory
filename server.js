@@ -10,8 +10,6 @@ const passport = require('passport');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// set up view engine
-app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // do I need both?

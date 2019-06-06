@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
 import LoginButton from './LoginButton';
@@ -13,9 +13,13 @@ function MyNavbar() {
 
   const userContext = useContext(UserContext);
 
+  useEffect(() => {
+    userContext.checkLogin();
+  }, []);
+
   return (
     <StyledNavbar fixed='top'>
-      <Navbar.Brand style={{color: 'white'}} as={Link} to={{pathname: '/', state: {isLoggedIn: userContext.isLoggedIn}}}>Daily Inventory</Navbar.Brand>
+      <Navbar.Brand style={{color: 'white'}}>Daily Inventory</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         {(!userContext.isLoggedIn)

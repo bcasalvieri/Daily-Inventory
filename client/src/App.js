@@ -5,7 +5,7 @@ import UserHome from './pages/UserHome';
 import AddUpdateEntry from './pages/AddUpdateEntry';
 import Navbar from './components/Navbar';
 import UserContext from './utils/UserContext';
-import { deleteEntry, getUserProfile } from './utils/API';
+import { deleteEntry, getUserProfile, loginCheck } from './utils/API';
 
 class App extends React.Component {
   
@@ -45,8 +45,16 @@ class App extends React.Component {
     },
     setLogout: () => {
       this.setState({
-        isLoggedIn: false
+        isLoggedIn: false,
       });
+    },
+    checkLogin: () => {
+      loginCheck()
+        .then(({data: userInfo}) => {
+          console.log(userInfo);
+          this.setState({isLoggedIn: userInfo.isLoggedIn, firstName: userInfo.firstName})
+        })
+        .catch(err => console.log(err));
     }
   };
 

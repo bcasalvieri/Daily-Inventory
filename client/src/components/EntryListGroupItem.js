@@ -10,10 +10,10 @@ function EntryListGroupItem(props) {
       <ListGroup.Item>
         <h5>{moment(props.create).format("MMMM DD YYYY [at] hh:mm:ss a")}</h5>
         <Button as={Link} to={`/update/${props.id}`} variant='warning'>
-          Edit Entry
+          <i className='fas fa-edit'></i>
         </Button>
         <Button variant='danger' onClick={() => props.handleDelete(props.id)}>
-          Delete Entry
+          <i className='fas fa-trash-alt'></i>
         </Button>
       </ListGroup.Item>
     </div>

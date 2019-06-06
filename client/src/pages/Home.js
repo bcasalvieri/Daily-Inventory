@@ -16,11 +16,6 @@ const MyJumbotron = styled(Jumbotron)`
   justify-content: center;
 `;
 
-const MyHeader = styled.h1`
-  margin-top: 100px;
-  color: darkslategray;
-`;
-
 class Home extends Component {
 
   componentDidMount(props) {

@@ -29,4 +29,14 @@ router
     res.redirect(redirectPath);
   });
 
+router
+  .route('/status')
+  .get((req,res) => {
+    if (req.user) {
+      res.json({...req.user._doc, isLoggedIn: true})
+    } else {
+      res.json({isLoggedIn: false});
+    }
+  })
+
 module.exports = router;

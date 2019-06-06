@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { getEntryById, createEntry, updateEntry } from '../utils/API';
 import { Container, Col, Form, Button } from 'react-bootstrap';
-import Sidebar from '../components/Sidebar';
 import styled from 'styled-components';
 import questionsJSON from '../questionsJSON';
 
@@ -10,11 +9,6 @@ const Wrapper = styled(Container)`
   position: relative;
   top: 56px;
   padding: 25px 0;
-`;
-
-const StyledFormLabel = styled(Form.Label)`
-  font-size: 1.25rem;
-  color: red;
 `;
 
 class AddUpdateEntry extends Component {
