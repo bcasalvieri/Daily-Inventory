@@ -6,6 +6,7 @@ import AddUpdateEntry from './pages/AddUpdateEntry';
 import Navbar from './components/Navbar';
 import UserContext from './utils/UserContext';
 import { deleteEntry, getUserProfile, loginCheck } from './utils/API';
+import ScrollToTop from './components/ScrollToTop';
 
 class App extends React.Component {
   
@@ -68,6 +69,7 @@ class App extends React.Component {
       <Router>
         <UserContext.Provider value={this.state}>
         <Navbar />
+        <ScrollToTop>
         <div>
           <Switch>
             <Route exact path='/' component={Home}/>
@@ -77,6 +79,7 @@ class App extends React.Component {
             <Route render={() => 404} />
           </Switch>
         </div>
+        </ScrollToTop>
         </UserContext.Provider>
       </Router>
     );

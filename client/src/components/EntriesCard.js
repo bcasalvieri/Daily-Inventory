@@ -23,12 +23,12 @@ function EntriesCard() {
               <Col xs={8} md={4} className='mb-4'>
               <Card className='entries-card'>
                 <Card.Body>
-                  <Card.Title className='text-center' style={{color: '#007ACC'}}>{moment(entry.created).format('MMM Do, YYYY')}</Card.Title>
+                  <Card.Title className='text-center' style={{color: '#015C53'}}>{moment(entry.created).format('MMM Do, YYYY')}</Card.Title>
                   <div className='d-flex justify-content-between mt-4'>
                     <Link to={`/update/${entry._id}`}>
                       <i 
                         className="fas fa-edit"
-                        style={{cursor: 'pointer', color: '#007ACC', fontSize: '1.5rem'}}
+                        style={{cursor: 'pointer', color: '#015C53', fontSize: '1.5rem'}}
                       >
                       </i>
                     </Link>

@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { getEntryById, createEntry, updateEntry } from '../utils/API';
-import { Container, Col, Form, Button } from 'react-bootstrap';
-import styled from 'styled-components';
+import { Col, Form, Button } from 'react-bootstrap';
 import questionsJSON from '../questionsJSON';
-
-const Wrapper = styled(Container)`
-  position: relative;
-  top: 56px;
-  padding: 25px 0;
-`;
+import Wrapper from '../components/Wrapper';
+import '../assets/style.css';
 
 class AddUpdateEntry extends Component {
 
@@ -165,29 +160,29 @@ class AddUpdateEntry extends Component {
 
     return (
       <React.Fragment>
-        <Wrapper className='d-flex justify-content-center'>
+        <Wrapper className='d-flex justify-content-center pt-5'>
           <Col md={8} lg={6}>
-            <h2 className='text-center mb-4'>{(this.state.id) ? "Update your inventory!" : "Add new inventory!"}</h2>
+            <h2 className='text-center mb-4' style={{color: '#028e81'}}>{(this.state.id) ? "Update your inventory!" : "Add a new inventory!"}</h2>
             <Form onSubmit={this.handleFormSubmit}>
               {
                 questionsJSON.map(question => {
                   return (
                     <React.Fragment>
                       <Form.Group className='m-0 mb-5'>
-                        <Form.Label className='mr-3'>{question.question}</Form.Label>
-                        <Form.Check
+                        <Form.Label className='form-label mr-3'>{question.question}</Form.Label>
+                        <Form.Check className='form-control-lg'
                           type='checkbox'
-                          id=''
+                          key={`${question.id}-yes`}
                           label='Yes'
                           value='true'
                           name={question.name}
                           onChange={this.handleRadioInputChange}
                           checked={this.state[question.name]}
                           inline
-                        />
+                          />
                         <Form.Check
                           type='checkbox'
-                          id=''
+                          key={`${question.id}-no`}
                           label='No'
                           value='false'
                           name={question.name}
@@ -210,7 +205,7 @@ class AddUpdateEntry extends Component {
                   )
                 })
               }
-              <Button type='submit' variant='success'>
+              <Button type='submit' className='form-button btn-block'>
                 {
                   (this.state.id)
                     ? 'Update Inventory'

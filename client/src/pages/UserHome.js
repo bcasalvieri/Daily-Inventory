@@ -1,21 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 import EntriesCard from '../components/EntriesCard';
 import Sidebar from '../components/Sidebar';
-import styled from 'styled-components';
 import '../assets/style.css';
-
-const Wrapper = styled.div`
-  position: relative;
-  top: 62px;
-  background-color: #F8F8F8;
-`;
+import UserContext from '../utils/UserContext';
+import Wrapper from '../components/Wrapper';
 
 function UserHome() {
 
+  const userContext = useContext(UserContext);
+
   return (
     <React.Fragment>
-      <Wrapper className='wrapper'>
+      <Wrapper>
         <Jumbotron fluid className='user-jumbotron mb-0'>
           <Container style={{height: '35vh'}} className='d-flex justify-content-center align-items-center'>
             <div className='d-flex flex-column align-items-center'>
@@ -30,7 +27,7 @@ function UserHome() {
               <Sidebar />
             </Col>
             <Col md={9}>
-              <h2 className='text-center mb-4' style={{color: '#004D80'}}>All Saved Inventories</h2>
+              <h2 className='text-center mb-4' style={{color: '#028e81'}}> {userContext.firstName}'s Saved Inventories</h2>
                 <EntriesCard />
             </Col>
           </Row>

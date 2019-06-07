@@ -7,7 +7,7 @@ import UserContext from '../utils/UserContext';
 import '../assets/style.css'
 
 const StyledNavbar = styled(Navbar)`
-  background-color: rgb(0,46,77);
+  background-color: rgb(2,142,129);
   box-shadow: 5px 0 10px black;
 `;
 
@@ -21,7 +21,7 @@ function MyNavbar() {
 
   return (
     <StyledNavbar fixed='top' className='px-5'>
-      <Navbar.Brand >Daily Inventory</Navbar.Brand>
+      <Navbar.Brand as={Link} to={{pathname: '/', state: {isLoggedIn: userContext.isLoggedIn}}}>Daily Inventory</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         {(!userContext.isLoggedIn)
