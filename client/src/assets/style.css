@@ -3,9 +3,14 @@
   font-size: 1.5rem;
 }
 
+.login-button {
+  border: 2px solid whitesmoke;
+  background-color: transparent;
+}
+
 .user-jumbotron {
-  background-image: url('./images/37715.jpg');
-  background-size: auto;
+  background-image: url('./images/44843.jpg');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
@@ -32,5 +37,4 @@
 
 .entries-card:hover {
   transform: scale(1.1);
-  cursor: pointer;
 }

@@ -7,7 +7,8 @@ import UserContext from '../utils/UserContext';
 import '../assets/style.css'
 
 const StyledNavbar = styled(Navbar)`
-  background-color: rgba(255,255,255, 0.2);
+  background-color: rgb(0,46,77);
+  box-shadow: 5px 0 10px black;
 `;
 
 function MyNavbar() {
@@ -26,9 +27,9 @@ function MyNavbar() {
         {(!userContext.isLoggedIn)
           ? <LoginButton />
           : 
-            <Navbar.Text style={{color: 'white', fontSize: '1.25rem'}}>
-              Welcome, <Link to="/home" style={{color: 'white'}}>{userContext.firstName}</Link>! 
-              <a href='http://localhost:3001/auth/logout' className="ml-2"><i className="fas fa-sign-out-alt" style={{color: 'white'}}></i></a>
+            <Navbar.Text style={{color: 'white', fontSize: '1.15rem'}}>
+              Welcome, <Link to="/home" style={{color: 'whitesmoke'}}>{userContext.firstName}</Link>! 
+              <a href='http://localhost:3001/auth/logout' className="ml-2"><i className="fas fa-sign-out-alt" style={{color: 'whitesmoke'}}></i></a>
             </Navbar.Text>
         }
       </Navbar.Collapse>

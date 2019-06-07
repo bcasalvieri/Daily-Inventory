@@ -12,14 +12,13 @@ function Sidebar() {
   return (
     <div>
       <h1 className='text-center display-4 mb-4' style={{color: '#004D80'}}>Daily Inventory</h1>
-      {/* <h3 className='text-center mb-4'>Welcome, {userContext.firstName}!</h3> */}
       <NavLink to='/add' className='sidebar-link'>
         <Button
           // variant='primary'
           block
           className='menu-button mb-3'
         >
-          New Inventory
+          <i className='fas fa-plus'></i> New Inventory
         </Button>
       </NavLink>
       <NavLink to='/home' className='sidebar-link'>
@@ -28,7 +27,7 @@ function Sidebar() {
           block
           className='menu-button mb-3'
         >
-          Saved Inventories
+          <i className='fas fa-glasses'></i> {userContext.firstName}'s Inventories
         </Button>
       </NavLink>
     </div>

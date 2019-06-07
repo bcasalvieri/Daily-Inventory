@@ -6,8 +6,9 @@ import styled from 'styled-components';
 import '../assets/style.css';
 
 const Wrapper = styled.div`
-  // position: relative;
-  // top: 62px;
+  position: relative;
+  top: 62px;
+  background-color: #F8F8F8;
 `;
 
 function UserHome() {
@@ -15,15 +16,15 @@ function UserHome() {
   return (
     <React.Fragment>
       <Wrapper className='wrapper'>
-        <Jumbotron fluid className='user-jumbotron'>
-          <Container style={{height: '30vh'}} className='d-flex justify-content-center align-items-end'>
+        <Jumbotron fluid className='user-jumbotron mb-0'>
+          <Container style={{height: '35vh'}} className='d-flex justify-content-center align-items-center'>
             <div className='d-flex flex-column align-items-center'>
-              <h3 className='mb-5' style={{color: 'whitesmoke'}}>Principle 7</h3>
-              <h2 className='text-center' style={{color: 'whitesmoke'}}>Reserve a daily time with God for self-examination, Bible reading, and prayer in order to know God and His will for my life and to gain the power to follow His will.</h2>
+              <h3 className='mb-5' style={{color: 'whitesmoke'}}>Step Ten</h3>
+              <h1 className='text-center' style={{color: 'whitesmoke'}}>Continued to take personal inventory and when we were wrong promptly admitted it.</h1>
             </div>
           </Container>
         </Jumbotron>
-        <Container className='mt-5'>
+        <Container className='py-5'>
           <Row>
             <Col md={3}>
               <Sidebar />
