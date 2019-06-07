@@ -21,7 +21,7 @@ function EntriesCard() {
           ? (userContext.entries.map((entry) => {
             return(
               <Col xs={8} md={4} className='mb-4'>
-              <Card className='entries-card'>
+              <Card className='entries-card' key={userContext.entries._id}>
                 <Card.Body>
                   <Card.Title className='text-center' style={{color: '#015C53'}}>{moment(entry.created).format('MMM Do, YYYY')}</Card.Title>
                   <div className='d-flex justify-content-between mt-4'>

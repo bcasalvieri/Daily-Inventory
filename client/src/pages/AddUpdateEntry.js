@@ -170,7 +170,7 @@ class AddUpdateEntry extends Component {
                     <React.Fragment>
                       <Form.Group className='m-0 mb-5'>
                         <Form.Label className='form-label mr-3'>{question.question}</Form.Label>
-                        <Form.Check className='form-control-lg'
+                        <Form.Check
                           type='checkbox'
                           key={`${question.id}-yes`}
                           label='Yes'

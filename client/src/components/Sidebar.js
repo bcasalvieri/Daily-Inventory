@@ -18,7 +18,7 @@ function Sidebar() {
           block
           className='menu-button mb-3'
         >
-          <i className='fas fa-plus'></i> New Inventory
+          <i className='fas fa-plus mr-1'></i> New Inventory
         </Button>
       </NavLink>
       <NavLink to='/home' className='sidebar-link'>
@@ -27,7 +27,16 @@ function Sidebar() {
           block
           className='menu-button mb-3'
         >
-          <i className='fas fa-glasses'></i> {userContext.firstName}'s Inventories
+          <i className='fas fa-glasses mr-1'></i> {userContext.firstName}'s Inventories
+        </Button>
+      </NavLink>
+      <NavLink to='/resources' className='sidebar-link'>
+        <Button
+          // variant='success'
+          block
+          className='menu-button mb-3'
+        >
+          <i className='fas fa-book-open mr-1'></i> Resources
         </Button>
       </NavLink>
     </div>

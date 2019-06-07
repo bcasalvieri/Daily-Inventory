@@ -80,10 +80,27 @@ const deleteEntry = async (req, res) => {
   const [entryFindErr, entryData] = await handle(Entry.findByIdAndDelete(req.params.id));
 
   if (entryFindErr) {
+    return res.status(500).json(entryFindErr)
+  }
+
+  const [userFindErr, userData] = await handle(User.findByIdAndUpdate(
+    req.user._id,
+    {
+      $pull: {
+        entries: req.params.id
+      }
+    },
+    {
+      new: true
+    }
+  ));
+
+  if (userFindErr) {
     return res.status(500).json(userFindErr)
   }
 
-  return res.status(200).json(entryData) 
+  return res.status(200).json(userData) 
+
 };
 
 
