@@ -2,7 +2,8 @@ import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import UserContext from '../utils/UserContext';
 import moment from 'moment';
-import { Card, Button } from 'react-bootstrap';
+import { Card, CardGroup, Col } from 'react-bootstrap';
+import '../assets/style.css';
 
 function EntriesCard() {
 
@@ -10,34 +11,42 @@ function EntriesCard() {
 
   useEffect(() => {
     userContext.getEntries();
-  }, [userContext]);
+  }, []);
 
   return (
     <div>
+      <CardGroup>
       {
         (userContext.entries.length > 0)
           ? (userContext.entries.map((entry) => {
             return(
-              <Card>
+              <Col xs={8} md={4} className='mb-4'>
+              <Card className='entries-card'>
                 <Card.Body>
-                  <Card.Title>{moment(entry.created).format('MMMM DD YYYY [at] hh:mm:ss a')}</Card.Title>
-                  <Button
-                  as={Link}
-                  to={`/update/${entry.id}`}
-                  >
-                    <i className="fas fa-edit"></i>
-                  </Button>
-                  <Button
-                    onClick={() => userContext.handleDeleteEntry(entry.id)}
-                  >
-                    <i className="fas fa-trash-alt"></i>
-                  </Button>
+                  <Card.Title className='text-center' style={{color: '#265C80'}}>{moment(entry.created).format('MMM Do, YYYY')}</Card.Title>
+                  <div className='d-flex justify-content-between mt-4'>
+                    <Link to={`/update/${entry._id}`}>
+                      <i 
+                        className="fas fa-edit"
+                        style={{cursor: 'pointer', color: 'lightgreen', fontSize: '1.5rem'}}
+                      >
+                      </i>
+                    </Link>
+                    <i
+                    style={{cursor: 'pointer', color: 'red', fontSize: '1.5rem'}}
+                    onClick={() => userContext.handleDeleteEntry(entry._id)}
+                    className="fas fa-trash-alt"
+                    >
+                    </i>
+                  </div>
                 </Card.Body>
               </Card>
+              </Col>
             )
           }))
           : <h4>No inventories to display!</h4>
       }
+      </CardGroup>
     </div>
   )
 }

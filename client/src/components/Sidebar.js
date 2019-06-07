@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import UserContext from '../utils/UserContext';
-import { ListGroup, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import '../assets/style.css'
+
 
 function Sidebar() {
 
@@ -9,26 +11,26 @@ function Sidebar() {
 
   return (
     <div>
-      <h1 className='text-center display-4'>Daily Inventory</h1>
-      <h3 className='text-center'>Welcome, {userContext.firstName}!</h3>
-      <Button
-        as={Link}
-        to='/add'
-        variant='primary'
-        block
-        className='mb-4'
-      >
-        New Inventory
-      </Button>
-      <Button
-        as={Link}
-        to='/home'
-        variant='success'
-        block
-        className='mb-4'
-      >
-        Saved Inventories
-      </Button>
+      <h1 className='text-center display-4 mb-4' style={{color: '#004D80'}}>Daily Inventory</h1>
+      {/* <h3 className='text-center mb-4'>Welcome, {userContext.firstName}!</h3> */}
+      <NavLink to='/add' className='sidebar-link'>
+        <Button
+          // variant='primary'
+          block
+          className='menu-button mb-3'
+        >
+          New Inventory
+        </Button>
+      </NavLink>
+      <NavLink to='/home' className='sidebar-link'>
+        <Button
+          // variant='success'
+          block
+          className='menu-button mb-3'
+        >
+          Saved Inventories
+        </Button>
+      </NavLink>
     </div>
   )
 }

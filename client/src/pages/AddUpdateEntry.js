@@ -167,13 +167,13 @@ class AddUpdateEntry extends Component {
       <React.Fragment>
         <Wrapper className='d-flex justify-content-center'>
           <Col md={8} lg={6}>
-            <h2>{(this.state.id) ? "Update your inventory!" : "Add new inventory!"}</h2>
+            <h2 className='text-center mb-4'>{(this.state.id) ? "Update your inventory!" : "Add new inventory!"}</h2>
             <Form onSubmit={this.handleFormSubmit}>
               {
                 questionsJSON.map(question => {
                   return (
                     <React.Fragment>
-                      <Form.Group className='m-0'>
+                      <Form.Group className='m-0 mb-5'>
                         <Form.Label className='mr-3'>{question.question}</Form.Label>
                         <Form.Check
                           type='checkbox'
@@ -202,7 +202,8 @@ class AddUpdateEntry extends Component {
                           name={question.note}
                           value={this.state[question.note]}
                           placeholder='Optional Notes'
-                          className='mb-4'
+                          style={{borderRadius: '50px'}}
+                          className='px-4'
                         />
                       </Form.Group>
                     </React.Fragment>

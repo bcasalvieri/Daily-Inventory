@@ -1,0 +1,36 @@
+.navbar-brand {
+  color: whitesmoke !important;
+  font-size: 1.5rem;
+}
+
+.user-jumbotron {
+  background-image: url('./images/37715.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+.sidebar-link:hover {
+  text-decoration: none;
+}
+
+.menu-button {
+  border-radius: 50px;
+  background-color: transparent;
+  border: 2px solid #004D80;
+  color: #004D80;
+}
+
+.menu-button:hover {
+  background-color: #004D80;
+  color: white;
+  border: 2px solid #004D80;
+}
+
+.entries-card {
+  box-shadow: 5px 5px 8px gray;
+}
+
+.entries-card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

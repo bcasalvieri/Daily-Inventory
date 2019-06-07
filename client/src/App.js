@@ -52,7 +52,12 @@ class App extends React.Component {
       loginCheck()
         .then(({data: userInfo}) => {
           console.log(userInfo);
-          this.setState({isLoggedIn: userInfo.isLoggedIn, firstName: userInfo.firstName})
+          this.setState({
+            isLoggedIn: userInfo.isLoggedIn,
+            firstName: userInfo.firstName,
+            email: userInfo.email,
+            id: userInfo._id
+          })
         })
         .catch(err => console.log(err));
     }

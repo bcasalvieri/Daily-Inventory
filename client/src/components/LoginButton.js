@@ -7,6 +7,7 @@ function LoginButton() {
       as="a"
       href="http://localhost:3001/auth/google"
       variant='danger'
+      style={{borderRadius: '50px'}}
     >
       Login with <i className="fab fa-google-plus-g"></i>
     </Button>    

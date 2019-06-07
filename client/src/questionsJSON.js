@@ -30,7 +30,7 @@ const questionsJSON = [
     note: "apologyNote",
   },
   {
-    question: "Did I spend time in prayer and meditation?",
+    question: "Did I spend time with God in prayer and meditation?",
     name: "prayer",
     note: "prayerNote",
   },

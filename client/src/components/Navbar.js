@@ -4,9 +4,10 @@ import styled from 'styled-components';
 import LoginButton from './LoginButton';
 import { Link } from 'react-router-dom';
 import UserContext from '../utils/UserContext';
+import '../assets/style.css'
 
 const StyledNavbar = styled(Navbar)`
-  background-color: rgba(47,79,79, 0.8);
+  background-color: rgba(255,255,255, 0.2);
 `;
 
 function MyNavbar() {
@@ -18,14 +19,14 @@ function MyNavbar() {
   }, []);
 
   return (
-    <StyledNavbar fixed='top'>
-      <Navbar.Brand style={{color: 'white'}}>Daily Inventory</Navbar.Brand>
+    <StyledNavbar fixed='top' className='px-5'>
+      <Navbar.Brand >Daily Inventory</Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse className="justify-content-end">
         {(!userContext.isLoggedIn)
           ? <LoginButton />
           : 
-            <Navbar.Text style={{color: 'white'}}>
+            <Navbar.Text style={{color: 'white', fontSize: '1.25rem'}}>
               Welcome, <Link to="/home" style={{color: 'white'}}>{userContext.firstName}</Link>! 
               <a href='http://localhost:3001/auth/logout' className="ml-2"><i className="fas fa-sign-out-alt" style={{color: 'white'}}></i></a>
             </Navbar.Text>
