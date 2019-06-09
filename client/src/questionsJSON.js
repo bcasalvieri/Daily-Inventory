@@ -37,7 +37,7 @@ const questionsJSON = [
   },
   {
     id: 7,
-    question: "Did I spend time with God in prayer and meditation?",
+    question: "Did I take time to connect with God in prayer and meditation?",
     name: "prayer",
     note: "prayerNote",
   },

@@ -1,6 +1,15 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn {
+  border-radius: 50px;
+}
+
 .navbar-brand {
   color: whitesmoke !important;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-family: 'Comfortaa', cursive;
 }
 
 .login-button {
@@ -19,43 +28,78 @@
   background-color: transparent !important;
 }
 
+.wrapper {
+  position: relative;
+  top: 86.67px;
+  background-color: #F5F5F5;
+  padding-bottom: 10vh;
+  min-height: 94vh;
+}
+
 .user-jumbotron {
   background-image: url('../images/44843.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
+.sidebar-header {
+  font-family: 'Comfortaa', cursive;
+  color: #028e81;
+}
+
 .sidebar-link:hover {
   text-decoration: none;
 }
 
-.menu-button {
-  border-radius: 50px;
-  background: linear-gradient(to bottom, #028e81 50%, white 50%);
+.menu-button,
+.form-button {
+  background: linear-gradient(to top, #028e81 50%, white 50%);
   background-size: 100% 200%;
-  background-position: right bottom;
+  background-position: right top;
   border: 2px solid #028e81;
   color: #028e81;
   transition: all 0.4s ease-out;
 }
 
-.menu-button:hover {
+.menu-button:hover,
+.form-button:hover {
   border: 2px solid #028e81;
-  background-position: right top;
+  background-position: right bottom;
 }
 
-.menu-button:active {
+.menu-button:active,
+.form-button:active {
   background-color: transparent !important;
   border: 2px solid #028e81 !important;
   color: #028e81 !important;
+}
+
+.card-group {
+  display: flex;
+  align-items: center;
+}
+
+.card-body {
+  height: 100%;
 }
 
 .entries-card {
   box-shadow: 5px 5px 8px gray;
 }
 
-.entries-card:hover {
-  transform: scale(1.1);
+.edit-button {
+  background-color: #028E81;
+  border: 2px solid #028E81;
+}
+
+.edit-button:hover {
+  background-color: #015C53;
+  border: 2px solid #015C53;
+}
+
+.edit-button:active {
+  background-color: #028E81 !important;
+  border: 2px solid #028E81 !important;
 }
 
 .form-label {
@@ -63,26 +107,63 @@
   font-size: 1.5rem;
 }
 
-.form-button {
-  border-radius: 50px;
-  background-color: transparent;
-  border: 2px solid #028e81;
-  color: #028e81;
-  padding-left: 25px;
-  padding-right: 25px;
-}
-
-.form-button:hover {
-  background-color: #028e81;
-  color: white;
-  border: 2px solid #028e81;
-}
-
 .form-check-input {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
 }
 
 .form-check-label {
   color: #015C53;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 150px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #028E81;
+  color: whitesmoke;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #F5F5F5;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+@media screen and (min-width: 720px) {
+  .wrapper {
+    top: 74px;
+  }
 }

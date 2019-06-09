@@ -160,8 +160,8 @@ class AddUpdateEntry extends Component {
 
     return (
       <React.Fragment>
-        <Wrapper className='d-flex justify-content-center pt-5'>
-          <Col md={8} lg={6}>
+        <Wrapper className='pt-5'>
+          <Col md={{span: 8, offset: 2}} lg={{span: 6, offset: 3}}>
             <h2 className='text-center mb-4' style={{color: '#028e81'}}>{(this.state.id) ? "Update your inventory!" : "Add a new inventory!"}</h2>
             <Form onSubmit={this.handleFormSubmit}>
               {
@@ -170,26 +170,28 @@ class AddUpdateEntry extends Component {
                     <React.Fragment>
                       <Form.Group className='m-0 mb-5'>
                         <Form.Label className='form-label mr-3'>{question.question}</Form.Label>
-                        <Form.Check
-                          type='checkbox'
-                          key={`${question.id}-yes`}
-                          label='Yes'
-                          value='true'
-                          name={question.name}
-                          onChange={this.handleRadioInputChange}
-                          checked={this.state[question.name]}
-                          inline
+                        <div className='mb-3'>
+                          <Form.Check
+                            type='checkbox'
+                            key={`${question.id}-yes`}
+                            label='Yes'
+                            value='true'
+                            name={question.name}
+                            onChange={this.handleRadioInputChange}
+                            checked={this.state[question.name]}
+                            inline
+                            />
+                          <Form.Check
+                            type='checkbox'
+                            key={`${question.id}-no`}
+                            label='No'
+                            value='false'
+                            name={question.name}
+                            onChange={this.handleRadioInputChange}
+                            checked={!this.state[question.name] || this.state[question.name] === ''}
+                            inline
                           />
-                        <Form.Check
-                          type='checkbox'
-                          key={`${question.id}-no`}
-                          label='No'
-                          value='false'
-                          name={question.name}
-                          onChange={this.handleRadioInputChange}
-                          checked={!this.state[question.name] || this.state[question.name] === ''}
-                          inline
-                        />
+                        </div>
                         <Form.Control
                           as='textarea'
                           rows='2'
@@ -198,7 +200,7 @@ class AddUpdateEntry extends Component {
                           value={this.state[question.note]}
                           placeholder='Optional Notes'
                           style={{borderRadius: '50px'}}
-                          className='px-4'
+                          className='px-4 text-box'
                         />
                       </Form.Group>
                     </React.Fragment>

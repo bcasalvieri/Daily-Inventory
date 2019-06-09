@@ -20,10 +20,10 @@ function MyNavbar() {
   }, []);
 
   return (
-    <StyledNavbar fixed='top' className='px-5'>
+    <Navbar style={{backgroundColor: 'rgb(2,142,129)', boxShadow: '5px 0 10px black'}} fixed='top' className='px-5'>
       <Navbar.Brand as={Link} to={{pathname: '/', state: {isLoggedIn: userContext.isLoggedIn}}}>Daily Inventory</Navbar.Brand>
-      <Navbar.Toggle />
-      <Navbar.Collapse className="justify-content-end">
+      <Navbar.Toggle aria-controls='basic-navbar-nav' />
+      <Navbar.Collapse id='basic-navbar-nav' className="justify-content-end">
         {(!userContext.isLoggedIn)
           ? <LoginButton />
           : 
@@ -33,7 +33,7 @@ function MyNavbar() {
             </Navbar.Text>
         }
       </Navbar.Collapse>
-    </StyledNavbar>
+    </Navbar>
   )
 }
 

@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
-import EntriesCard from '../components/EntriesCard';
+import EntriesFlipCard from '../components/EntriesFlipCard';
 import Sidebar from '../components/Sidebar';
 import '../assets/css/style.css';
 import UserContext from '../utils/UserContext';
-import Wrapper from '../components/Wrapper';
 
-function UserHome() {
+export default function UserHome() {
 
   const userContext = useContext(UserContext);
 
   return (
     <React.Fragment>
-      <Wrapper>
+      <div className='wrapper'>
         <Jumbotron fluid className='user-jumbotron mb-0'>
           <Container style={{height: '35vh'}} className='d-flex justify-content-center align-items-center'>
             <div className='d-flex flex-column align-items-center'>
@@ -23,20 +22,16 @@ function UserHome() {
         </Jumbotron>
         <Container className='py-5'>
           <Row>
-            <Col md={3}>
+            <Col md={4} lg={3}>
               <Sidebar />
             </Col>
-            <Col md={9}>
+            <Col md={8} lg={9}>
               <h2 className='text-center mb-4' style={{color: '#028e81'}}> {userContext.firstName}'s Saved Inventories</h2>
-                <EntriesCard />
+                <EntriesFlipCard />
             </Col>
           </Row>
         </Container>
-      </Wrapper>
+      </div>
     </React.Fragment>
   )
 }
-
-
-
-export default UserHome; 

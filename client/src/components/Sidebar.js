@@ -11,7 +11,7 @@ function Sidebar() {
 
   return (
     <div>
-      <h1 className='text-center display-4 mb-4' style={{color: '#028e81'}}>Daily Inventory</h1>
+      <h1 className='sidebar-header text-center mb-4'>Daily Inventory</h1>
       <NavLink to='/add' className='sidebar-link'>
         <Button
           block
