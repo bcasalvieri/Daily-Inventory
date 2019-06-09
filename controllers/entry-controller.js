@@ -81,8 +81,9 @@ const deleteEntry = async (req, res) => {
 
   if (entryFindErr) {
     return res.status(500).json(entryFindErr)
-  }
+  };
 
+  // delete entry from User schema
   const [userFindErr, userData] = await handle(User.findByIdAndUpdate(
     req.user._id,
     {

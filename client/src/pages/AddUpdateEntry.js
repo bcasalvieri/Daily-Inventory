@@ -4,7 +4,7 @@ import { getEntryById, createEntry, updateEntry } from '../utils/API';
 import { Col, Form, Button } from 'react-bootstrap';
 import questionsJSON from '../questionsJSON';
 import Wrapper from '../components/Wrapper';
-import '../assets/style.css';
+import '../assets/css/style.css';
 
 class AddUpdateEntry extends Component {
 

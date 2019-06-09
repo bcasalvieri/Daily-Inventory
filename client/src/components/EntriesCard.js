@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import UserContext from '../utils/UserContext';
 import moment from 'moment';
 import { Card, CardGroup, Col } from 'react-bootstrap';
-import '../assets/style.css';
+import '../assets/css/style.css';
 
 function EntriesCard() {
 

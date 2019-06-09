@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 import EntriesCard from '../components/EntriesCard';
 import Sidebar from '../components/Sidebar';
-import '../assets/style.css';
+import '../assets/css/style.css';
 import UserContext from '../utils/UserContext';
 import Wrapper from '../components/Wrapper';
 

@@ -31,7 +31,7 @@ const questionsJSON = [
   },
   {
     id: 6,
-    question: "Do I owe anyone an apology?",
+    question: "Do I owe someone an apology?",
     name: "apology",
     note: "apologyNote",
   },

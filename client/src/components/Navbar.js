@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import LoginButton from './LoginButton';
 import { Link } from 'react-router-dom';
 import UserContext from '../utils/UserContext';
-import '../assets/style.css'
+import '../assets/css/style.css'
 
 const StyledNavbar = styled(Navbar)`
   background-color: rgb(2,142,129);
