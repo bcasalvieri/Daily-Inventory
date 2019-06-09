@@ -31,6 +31,11 @@ const EntrySchema = new Schema({
     required: true
   },
   afraidNote: String,
+  loving: {
+    type: Boolean,
+    required: true
+  },
+  lovingNote: String,
   patient: {
     type: Boolean,
     required: true
@@ -41,6 +46,11 @@ const EntrySchema = new Schema({
     required: true
   },
   apologyNote: String,
+  discuss: {
+    type: Boolean,
+    required: true
+  },
+  discussNote: String,
   prayer: {
     type: Boolean,
     required: true

@@ -10,8 +10,12 @@ function Sidebar() {
   const userContext = useContext(UserContext);
 
   return (
-    <div>
-      <h1 className='sidebar-header text-center mb-4'>Daily Inventory</h1>
+    <div className='mb-5'>
+      <h1 className='sidebar-header text-center mb-3'>Daily Inventory</h1>
+      <div className='sidebar-welcome mb-3'>
+        Welcome, {userContext.firstName}! 
+        <a href='http://localhost:3001/auth/logout' className="ml-2"><i className="fas fa-sign-out-alt"></i></a>
+      </div>
       <NavLink to='/add' className='sidebar-link'>
         <Button
           block

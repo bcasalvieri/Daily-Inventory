@@ -19,30 +19,42 @@ const questionsJSON = [
   },
   {
     id: 4,
-    question: "Was I afraid?",
+    question: "Did I say or do something out of fear?",
     name: "afraid",
     note: "afraidNote",
   },
   {
     id: 5,
+    question: "Was I kind and loving towards all?",
+    name: "loving",
+    note: "lovingNote",
+  },
+  {
+    id: 6,
     question: "Was I patient with all?",
     name: "patient",
     note: "patientNote",
   },
   {
-    id: 6,
+    id: 7,
     question: "Do I owe someone an apology?",
     name: "apology",
     note: "apologyNote",
   },
   {
-    id: 7,
+    id: 8,
+    question: "Have I kept something to myself that I need to discuss with someone?",
+    name: "discuss",
+    note: "discussNote",
+  },
+  {
+    id: 9,
     question: "Did I take time to connect with God in prayer and meditation?",
     name: "prayer",
     note: "prayerNote",
   },
   {
-    id: 8,
+    id: 10,
     question: "Did I remain sober?",
     name: "sobriety",
     note: "sobrietyNote"
