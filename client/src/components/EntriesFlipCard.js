@@ -53,7 +53,9 @@ function EntriesFlipCard() {
               </Col>
             )
           }))
-          : <h4>No inventories to display!</h4>
+          : <div style={{width: '100%'}} className='d-flex justify-content-center'>
+              <h4>No inventories to display!</h4>
+            </div>
       }
       </CardGroup>
     </div>
