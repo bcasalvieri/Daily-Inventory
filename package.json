@@ -12,13 +12,13 @@
     "mongoose": "^5.5.11",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^2.0.0",
-    "react-moment": "^0.9.2"
+    "react-moment": "^0.9.2",
   },
   "devDependencies": {
     "concurrently": "^4.1.0"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "node server.js",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon server.js --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
