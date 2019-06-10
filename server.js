@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const cookieSession = require('cookie-session');
 const passport = require('passport');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -32,6 +33,7 @@ mongoose.connect(mongoUri, {
 // set up routes
 app.use(routes);
 
+// added from internet
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });

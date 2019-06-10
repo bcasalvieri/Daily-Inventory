@@ -97,7 +97,8 @@ body {
   text-decoration: none;
 }
 
-.entries-header {
+.entries-header,
+.resource-header {
   color: #028E81;
 }
 
@@ -214,6 +215,24 @@ body {
   transform: rotateY(180deg);
 }
 
+.resources-jumbotron {
+  color: #028E81;
+}
+
+.resources-buttons .btn {
+  background-color: #028E81;
+  border: 2px solid #028E81;
+}
+
+.resources-buttons .btn:hover {
+  background-color: #015C53;
+  border: 2px solid #015C53;
+}
+
+.resources-buttons .btn:active {
+  background-color: transparent !important;
+  color: #028E81 !important;
+}
 
 @media screen and (min-width: 720px) {
   .wrapper {
