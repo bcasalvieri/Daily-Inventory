@@ -9,6 +9,8 @@ body {
 .navbar {
   background-color: rgb(2,142,129) !important;
   box-shadow: 5px 0 10px black !important;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-brand {
@@ -31,6 +33,17 @@ body {
 .login-button:active {
   border: 2px solid whitesmoke !important;
   background-color: transparent !important;
+}
+
+.home-jumbotron {
+  min-height: 100vh;
+  background-image: url('../images/background-calm-clouds-747964.jpg');
+  background-position: center;
+  background-size: auto 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
@@ -137,6 +150,10 @@ body {
 .edit-button:active {
   background-color: #028E81 !important;
   border: 2px solid #028E81 !important;
+}
+
+.add-update-header {
+  color: #028E81;
 }
 
 .form-label {

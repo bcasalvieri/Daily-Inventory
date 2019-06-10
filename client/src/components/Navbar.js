@@ -22,10 +22,6 @@ function MyNavbar() {
         {(!userContext.isLoggedIn)
           ? <LoginButton />
           : ""
-            // <Navbar.Text style={{color: 'white', fontSize: '1.15rem'}}>
-            //   Welcome, <Link to="/home" style={{color: 'whitesmoke'}}>{userContext.firstName}</Link>! 
-            //   <a href='http://localhost:3001/auth/logout' className="ml-2"><i className="fas fa-sign-out-alt" style={{color: 'whitesmoke'}}></i></a>
-            // </Navbar.Text>
         }
       </Navbar.Collapse>
     </Navbar>

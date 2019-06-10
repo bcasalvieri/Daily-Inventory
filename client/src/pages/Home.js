@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { Jumbotron } from "react-bootstrap";
-import styled from 'styled-components';
-import BackgroundImg from '../assets/images/background-calm-clouds-747964.jpg';
 import UserContext from '../utils/UserContext';
 import { getUserProfile } from "../utils/API";
+import '../assets/css/style.css';
 
-
-const MyJumbotron = styled(Jumbotron)`
-  min-height: 100vh;
-  background-image: url('${BackgroundImg}');
-  background-size: cover;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 class Home extends Component {
 
@@ -47,8 +35,8 @@ class Home extends Component {
 
     return (
       <div>
-        <MyJumbotron>
-        </MyJumbotron>
+        <div className='home-jumbotron'>
+        </div>
       </div>
     )
   }

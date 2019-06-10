@@ -177,7 +177,7 @@ class AddUpdateEntry extends Component {
       <React.Fragment>
         <div className='wrapper pt-5'>
           <Col md={{span: 8, offset: 2}} lg={{span: 6, offset: 3}}>
-            <h2 className='text-center mb-4' style={{color: '#028e81'}}>{(this.state.id) ? "Update your inventory!" : "Add a new inventory!"}</h2>
+            <h2 className='add-update-header text-center mb-4'>{(this.state.id) ? "Update your inventory!" : "Add a new inventory!"}</h2>
             <Form onSubmit={this.handleFormSubmit}>
               {
                 questionsJSON.map(question => {
