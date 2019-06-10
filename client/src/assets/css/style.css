@@ -39,7 +39,7 @@ body {
   min-height: 100vh;
   background-image: url('../images/background-calm-clouds-747964.jpg');
   background-position: center;
-  background-size: auto 100%;
+  background-size: cover;
   margin: 0;
   display: flex;
   justify-content: center;
