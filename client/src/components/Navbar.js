@@ -18,6 +18,8 @@ function MyNavbar() {
 
   if (!userContext.isLoggedIn) {
     button = <LoginButton />
+  } else {
+    button =  <a href='/auth/logout' className="ml-2">Logout <i className="fas fa-sign-out-alt"></i></a>
   }
 
   return (
