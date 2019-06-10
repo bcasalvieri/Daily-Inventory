@@ -100,11 +100,6 @@ body {
   color: #015C53;
 }
 
-.fa-sign-out-alt::before{
-  color: whitesmoke;
-  text-decoration: none;
-}
-
 .dropdown-item:hover,
 .dropdown-item:active {
   background-color: #028E81 !important;
