@@ -1,6 +1,6 @@
 const express = require('express');
 const routes = require('./routes');
-// const passportSetup = require('./middleware/passport-setup');
+const passportSetup = require('./middleware/passport-setup');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const cookieSession = require('cookie-session');

@@ -6,6 +6,11 @@ body {
   border-radius: 50px;
 }
 
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 .navbar {
   background-color: rgb(2,142,129) !important;
   box-shadow: 5px 0 10px black !important;
