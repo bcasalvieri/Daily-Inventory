@@ -21,7 +21,7 @@ function MyNavbar() {
   }
 
   return (
-    <Navbar fixed='top' className='px-5' expand="lg">
+    <Navbar fixed='top' className='px-5' expand="md">
       <Navbar.Brand
       as={Link}
       to={{pathname: '/', state: {isLoggedIn: userContext.isLoggedIn}}}
@@ -29,8 +29,8 @@ function MyNavbar() {
         Daily Inventory
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto mt-3">
+      <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
+        <Nav>
           {button}
         </Nav>
       </Navbar.Collapse>
