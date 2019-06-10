@@ -1,6 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import { Navbar } from 'react-bootstrap';
-import styled from 'styled-components';
 import LoginButton from './LoginButton';
 import { Link } from 'react-router-dom';
 import UserContext from '../utils/UserContext';

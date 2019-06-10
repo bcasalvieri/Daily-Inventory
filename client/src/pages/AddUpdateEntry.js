@@ -3,7 +3,6 @@ import { Redirect } from 'react-router-dom';
 import { getEntryById, createEntry, updateEntry } from '../utils/API';
 import { Col, Form, Button } from 'react-bootstrap';
 import questionsJSON from '../questionsJSON';
-import Wrapper from '../components/Wrapper';
 import '../assets/css/style.css';
 
 class AddUpdateEntry extends Component {
@@ -176,7 +175,7 @@ class AddUpdateEntry extends Component {
 
     return (
       <React.Fragment>
-        <Wrapper className='pt-5'>
+        <div className='wrapper pt-5'>
           <Col md={{span: 8, offset: 2}} lg={{span: 6, offset: 3}}>
             <h2 className='text-center mb-4' style={{color: '#028e81'}}>{(this.state.id) ? "Update your inventory!" : "Add a new inventory!"}</h2>
             <Form onSubmit={this.handleFormSubmit}>
@@ -232,7 +231,7 @@ class AddUpdateEntry extends Component {
               </Button>
             </Form>
           </Col>
-        </Wrapper>
+        </div>
       </React.Fragment>
     )
   }
