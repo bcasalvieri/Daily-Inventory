@@ -3,6 +3,8 @@ const GoogleStrategy = require('passport-google-oauth20');
 require('dotenv').config();
 const { User } = require('../models');
 
+const redirectPath = process.env.NODE_ENV === "production" ? ('https://daily-inventory.herokuapp.com/auth/google/redirect') : ("http://localhost:3001/auth/google/redirect");
+
 passport.serializeUser((user, done) => {
   done(null, user.id)
 });
@@ -17,7 +19,7 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new GoogleStrategy({
     // options for the strategy
-    callbackURL: '/auth/google/redirect',
+    callbackURL: redirectPath,
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET
   }, (accessToken, refreshToken, email, done) => {
