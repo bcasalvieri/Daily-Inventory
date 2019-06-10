@@ -131,6 +131,20 @@ body {
   color: #028e81 !important;
 }
 
+.menu-button:focus {
+  background-color: transparent !important;
+  border: 2px solid #028e81 !important;
+  color: #028e81 !important;
+}
+
+.blockquote {
+  font-size: 1rem;
+}
+
+.blockquote-footer {
+  font-size: 1rem;
+}
+
 .card-group {
   display: flex;
   align-items: center;
@@ -238,6 +252,10 @@ body {
 @media screen and (min-width: 960px) {
   .sidebar-header {
     font-size: 2.75rem;
+  }
+
+  .blockquote {
+    font-size: 1.25rem;
   }
 }
 
