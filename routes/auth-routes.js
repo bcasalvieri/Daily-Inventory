@@ -23,9 +23,10 @@ router
 router
   .route('/google/redirect')
   .get(passport.authenticate('google'), (req, res) => {
-    let redirectPath = (process.env.NODE_ENV === "production") ? "/" : "http://localhost:3000"
+    let redirectPath = (process.env.NODE_ENV === "production") ? "https://daily-inventory.herokuapp.com" : "http://localhost:3000"
     redirectPath = `${redirectPath}/?userId=${req.user._id}`;
     // res.json(req.user);
+    console.log('IT HIT REDIRECT')
     res.redirect(redirectPath);
   });
 
