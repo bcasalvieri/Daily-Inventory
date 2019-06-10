@@ -89,23 +89,29 @@ body {
 .sidebar-welcome {
   font-size: 1.5rem;
   text-align: center;
-  color: #028E81;
+  color: #015C53;
 }
 
 .fa-sign-out-alt::before{
-  color: #028E81;
+  color: #015C53;
   text-decoration: none;
 }
 
+.dropdown-item:hover,
+.dropdown-item:active {
+  background-color: #028E81 !important;
+  color: whitesmoke;
+}
+
 .entries-header,
-.resource-header {
+.resources-header {
   color: #028E81;
 }
 
 .menu-button,
 .form-button {
   background: linear-gradient(to top, #028e81 50%, white 50%);
-  background-size: 100% 200%;
+  background-size: 100% 300%;
   background-position: right top;
   border: 2px solid #028e81;
   color: #028e81;
@@ -213,25 +219,6 @@ body {
   background-color: #F5F5F5;
   color: white;
   transform: rotateY(180deg);
-}
-
-.resources-jumbotron {
-  color: #028E81;
-}
-
-.resources-buttons .btn {
-  background-color: #028E81;
-  border: 2px solid #028E81;
-}
-
-.resources-buttons .btn:hover {
-  background-color: #015C53;
-  border: 2px solid #015C53;
-}
-
-.resources-buttons .btn:active {
-  background-color: transparent !important;
-  color: #028E81 !important;
 }
 
 @media screen and (min-width: 720px) {
