@@ -1,11 +1,10 @@
 const express = require('express');
 const routes = require('./routes');
-// const passportSetup = require('./middleware/passport-setup');
+const passportSetup = require('./middleware/passport-setup');
 const mongoose = require('mongoose');
 require('dotenv').config();
 const cookieSession = require('cookie-session');
 const passport = require('passport');
-const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
