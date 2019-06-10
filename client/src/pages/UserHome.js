@@ -11,7 +11,7 @@ import SerenityPrayer from '../components/SerenityPrayer';
 class UserHome extends Component {
 
   state = {
-    isShowing: "Saved Inventories"
+    isShowing: "Saved Inventories",
   }
 
   handleSavedInventories = () => {
@@ -37,7 +37,6 @@ class UserHome extends Component {
       isShowing: 'Serenity Prayer'
     });
   };
-
 
   render() {
 

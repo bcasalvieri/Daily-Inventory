@@ -20,7 +20,7 @@ function EntriesFlipCard() {
         (userContext.entries.length > 0)
           ? (userContext.entries.map((entry) => {
             return(
-              <Col xs={10} md={6} lg={4} xl={3} className='mb-4'>
+              <Col xs={10} md={6} lg={4} className='mb-4'>
                 <Card className='entries-card flip-card' key={userContext.entries._id}>
                   <div className='flip-card-inner'>
                     <div className='flip-card-front'>
