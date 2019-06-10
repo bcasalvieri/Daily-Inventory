@@ -15,7 +15,7 @@ function Sidebar(props) {
       <h1 className='sidebar-header text-center mb-3'>Daily Inventory</h1>
       <div className='sidebar-welcome mb-3'>
         Welcome, {userContext.firstName}! 
-        <a href='http://localhost:3001/auth/logout' className="ml-2"><i className="fas fa-sign-out-alt"></i></a>
+        <a href='/auth/logout' className="ml-2"><i className="fas fa-sign-out-alt"></i></a>
       </div>
       <NavLink to='/add' className='sidebar-link'>
         <Button
