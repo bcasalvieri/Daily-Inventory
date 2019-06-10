@@ -27,7 +27,7 @@ body {
 .login-button:hover {
   background-color: whitesmoke;
   border-color: whitesmoke;
-  color: #028e81;
+  color: #028E81;
 }
 
 .login-button:active {
@@ -79,7 +79,7 @@ body {
 
 .sidebar-header {
   font-family: 'Comfortaa', cursive;
-  color: #028e81; 
+  color: #028E81; 
 }
 
 .sidebar-link:hover {
@@ -110,31 +110,31 @@ body {
 
 .menu-button,
 .form-button {
-  background: linear-gradient(to top, #028e81 50%, white 50%);
+  background: linear-gradient(to top, #028E81 50%, white 50%);
   background-size: 100% 300%;
   background-position: right top;
-  border: 2px solid #028e81;
-  color: #028e81;
+  border: 2px solid #028E81;
+  color: #028E81;
   transition: all 0.8s ease;
 }
 
 .menu-button:hover,
 .form-button:hover {
-  border: 2px solid #028e81;
+  border: 2px solid #028E81;
   background-position: right bottom;
 }
 
 .menu-button:active,
 .form-button:active {
   background-color: transparent !important;
-  border: 2px solid #028e81 !important;
-  color: #028e81 !important;
+  border: 2px solid #028E81 !important;
+  color: #028E81 !important;
 }
 
 .menu-button:focus {
   background-color: transparent !important;
-  border: 2px solid #028e81 !important;
-  color: #028e81 !important;
+  border: 2px solid #028E81 !important;
+  color: #028E81 !important;
 }
 
 .blockquote {
@@ -178,7 +178,7 @@ body {
 }
 
 .form-label {
-  color: #028e81;
+  color: #028E81;
   font-size: 1.5rem;
 }
 

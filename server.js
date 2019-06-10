@@ -24,18 +24,13 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// set up routes
+app.use(routes);
+
 // connect to mongodb
 const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/daily-inventory';
 mongoose.connect(mongoUri, {
   useNewUrlParser: true
-});
-
-// set up routes
-app.use(routes);
-
-// added from internet
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
 app.listen(PORT, () => {
