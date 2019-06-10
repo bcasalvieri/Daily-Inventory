@@ -115,18 +115,16 @@ body {
 
 .menu-button,
 .form-button {
-  background: linear-gradient(to top, #028E81 50%, white 50%);
-  background-size: 100% 300%;
-  background-position: right top;
+  background-color: transparent;
   border: 2px solid #028E81;
   color: #028E81;
-  transition: all 0.8s ease;
 }
 
 .menu-button:hover,
 .form-button:hover {
+  background-color: #028E81;
   border: 2px solid #028E81;
-  background-position: right bottom;
+  color: whitesmoke;
 }
 
 .menu-button:active,
