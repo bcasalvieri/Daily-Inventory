@@ -4,6 +4,8 @@ import { getEntryById, createEntry, updateEntry } from '../utils/API';
 import { Col, Form, Button } from 'react-bootstrap';
 import questionsJSON from '../questionsJSON';
 import '../assets/css/style.css';
+import Swal from 'sweetalert2';
+
 
 class AddUpdateEntry extends Component {
 
@@ -71,7 +73,18 @@ class AddUpdateEntry extends Component {
   handleCreateEntry = (entryInfo) => {
     createEntry(entryInfo)
       .then(() => {
-        alert(`Entry saved successfully!`);
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          time: 3000
+        });
+
+        Toast.fire({
+          title: 'Inventory added successfully!',
+          type: 'success',
+        })
+
         this.setState({
           entrySaved: true
         });
@@ -82,7 +95,18 @@ class AddUpdateEntry extends Component {
   handleUpdateEntry = (entryId, entryInfo) => {
     updateEntry(entryId, entryInfo)
       .then(() => {
-        alert(`Entry updated successfully!`);
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          time: 3000
+        });
+        
+        Toast.fire({
+          title: 'Inventory updated successfully!',
+          type: 'success',
+        });
+
         this.setState({
           entrySaved: true
         });
@@ -171,7 +195,7 @@ class AddUpdateEntry extends Component {
     // if entry has been saved, redirect to /home
     if (this.state.entrySaved) {
       return <Redirect to='/home' />
-    }
+    };
 
     return (
       <React.Fragment>

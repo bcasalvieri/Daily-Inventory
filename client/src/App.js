@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import UserContext from './utils/UserContext';
 import { deleteEntry, getUserProfile, loginCheck } from './utils/API';
 import ScrollToTop from './components/ScrollToTop';
+import Swal from 'sweetalert2';
 
 class App extends React.Component {
   
@@ -29,7 +30,17 @@ class App extends React.Component {
       deleteEntry(entryId)
         .then(getUserProfile)
         .then(({ data: {entries} }) => {
-          this.setState({entries})
+          this.setState({entries});
+          const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            time: 3000
+          });
+          Toast.fire({
+            title: 'Inventory deleted successfully!',
+            type: 'success',
+          })
         })
         .catch(err => {
           console.log(err);
