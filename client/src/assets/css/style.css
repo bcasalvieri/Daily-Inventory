@@ -24,18 +24,21 @@ body {
   font-family: 'Comfortaa', cursive;
 }
 
-.login-button {
+.login-button,
+.logout-button {
   border: 2px solid whitesmoke;
   background-color: transparent;
 }
 
-.login-button:hover {
+.login-button:hover,
+.logout-button:hover {
   background-color: whitesmoke;
   border-color: whitesmoke;
   color: #028E81;
 }
 
-.login-button:active {
+.login-button:active,
+.logout-button:active {
   border: 2px solid whitesmoke !important;
   background-color: transparent !important;
 }
@@ -98,7 +101,7 @@ body {
 }
 
 .fa-sign-out-alt::before{
-  color: #015C53;
+  color: whitesmoke;
   text-decoration: none;
 }
 
