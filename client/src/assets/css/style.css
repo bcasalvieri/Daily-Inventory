@@ -26,15 +26,15 @@ body {
 
 .login-button,
 .logout-button {
-  border: 2px solid whitesmoke;
-  background-color: transparent;
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+  color: #028E81;
 }
 
 .login-button:hover,
 .logout-button:hover {
-  background-color: whitesmoke;
-  border-color: whitesmoke;
-  color: #028E81;
+  border: 2px solid whitesmoke;
+  background-color: transparent;
 }
 
 .login-button:active,
@@ -43,15 +43,13 @@ body {
   background-color: transparent !important;
 }
 
-.home-jumbotron {
-  min-height: 100vh;
-  background-image: url('../images/background-calm-clouds-747964.jpg');
-  background-position: center;
-  background-size: cover;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.carousel img {
+  max-height: 50vh;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  visibility: hidden;
 }
 
 .wrapper {
