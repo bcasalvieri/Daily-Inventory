@@ -20,12 +20,7 @@ const createEntry = async (req, res) => {
       _id: req.user._id
     },
     {
-      $push: {
-        entries: {
-          $each: entryData._id,
-          $position: 0
-        }
-      }
+      $push: { entries: entryData._id }
     },
     {
       new: true
