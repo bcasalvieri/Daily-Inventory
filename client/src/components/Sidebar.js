@@ -31,7 +31,7 @@ function Sidebar(props) {
         >
           <i className='fas fa-glasses mr-1'></i> {userContext.firstName}'s Inventories
       </Button>
-      <Dropdown alignRight>
+      <Dropdown alignRight className='mb-3'>
         <DropdownToggle block className='menu-button'>
           <i className='fas fa-book-open mr-1'></i> Resources
         </DropdownToggle>
@@ -40,6 +40,29 @@ function Sidebar(props) {
           <Dropdown.Item onClick={props.steps}>12 Steps</Dropdown.Item>
           <Dropdown.Item onClick={props.principles}>8 Principles</Dropdown.Item>
           <Dropdown.Item onClick={props.prayer}>Serenity Prayer</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+      <Dropdown alignRight className='mb-3'>
+        <DropdownToggle block className='menu-button'>
+          <i className='fas fa-search-location mr-1'></i> Find A Meeting
+        </DropdownToggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item
+            as='a'
+            href='https://locator.crgroups.info/'
+            target='_blank'
+          >
+            Celebrate Recovery
+          </Dropdown.Item>
+          <Dropdown.Item
+            as='a'
+            href='https://www.aa.org/pages/en_US/find-aa-resources'
+            target='_blank'
+          >
+            Alcoholics Anonymous
+          </Dropdown.Item>
+          
         </Dropdown.Menu>
       </Dropdown>
     </div>
