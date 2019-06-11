@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import EntriesFlipCard from '../components/EntriesFlipCard';
 import Sidebar from '../components/Sidebar';
 import '../assets/css/style.css';
