@@ -112,9 +112,10 @@ body {
 }
 
 .dropdown-item:hover,
-.dropdown-item:active {
+.dropdown-item:active,
+.dropdown-item:focus {
   background-color: #028E81 !important;
-  color: whitesmoke;
+  color: whitesmoke !important;
 }
 
 .entries-header,
@@ -185,7 +186,8 @@ body {
   border: 2px solid #028E81 !important;
 }
 
-.add-update-header {
+.add-update-header,
+.summary-header {
   color: #028E81;
 }
 
@@ -247,9 +249,13 @@ body {
   transform: rotateY(180deg);
 }
 
-
 .ol {
   padding-left: 0;
+}
+
+.accordian-header {
+  background-color: #32A296;
+  color: whitesmoke;
 }
 
 @media screen and (min-width: 720px) {

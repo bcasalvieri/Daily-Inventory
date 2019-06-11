@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import UserHome from './pages/UserHome';
 import AddUpdateEntry from './pages/AddUpdateEntry';
+import Summary from './pages/Summary';
 import Navbar from './components/Navbar';
 import UserContext from './utils/UserContext';
 import { deleteEntry, getUserProfile, loginCheck } from './utils/API';
@@ -87,6 +88,7 @@ class App extends React.Component {
             <Route exact path='/home' component={UserHome} />
             <Route exact path='/add' component={AddUpdateEntry} />
             <Route exact path='/update/:id' component={AddUpdateEntry} />
+            <Route exact path='/summary' component={Summary} />
             <Route render={() => 404} />
           </Switch>
         </div>

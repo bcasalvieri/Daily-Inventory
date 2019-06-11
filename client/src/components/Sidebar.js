@@ -16,6 +16,13 @@ function Sidebar(props) {
       <div className='sidebar-welcome mb-3'>
         Welcome, {userContext.firstName}!
       </div>
+      <Button
+          block
+          className='menu-button mb-3'
+          onClick={props.saved}
+        >
+          <i class="fas fa-home mr-1"></i> Home
+      </Button>
       <NavLink to='/add' className='sidebar-link'>
         <Button
           block
@@ -24,13 +31,14 @@ function Sidebar(props) {
           <i className='fas fa-plus mr-1'></i> New Inventory
         </Button>
       </NavLink>
-      <Button
+      <NavLink to='/summary' className='sidebar-link'>
+        <Button
           block
           className='menu-button mb-3'
-          onClick={props.saved}
         >
-          <i className='fas fa-glasses mr-1'></i> {userContext.firstName}'s Inventories
-      </Button>
+          <i className='fas fa-glasses mr-1'></i> Read All Inventories
+        </Button>
+      </NavLink>
       <Dropdown alignRight className='mb-3'>
         <DropdownToggle block className='menu-button'>
           <i className='fas fa-book-open mr-1'></i> Resources
@@ -50,6 +58,13 @@ function Sidebar(props) {
         <Dropdown.Menu>
           <Dropdown.Item
             as='a'
+            href='https://www.aa.org/pages/en_US/find-aa-resources'
+            target='_blank'
+          >
+            Alcoholics Anonymous
+          </Dropdown.Item>
+          <Dropdown.Item
+            as='a'
             href='https://locator.crgroups.info/'
             target='_blank'
           >
@@ -57,12 +72,18 @@ function Sidebar(props) {
           </Dropdown.Item>
           <Dropdown.Item
             as='a'
-            href='https://www.aa.org/pages/en_US/find-aa-resources'
+            href='https://www.sa.org/meetings/'
             target='_blank'
           >
-            Alcoholics Anonymous
+            Sexaholics Anonymous
           </Dropdown.Item>
-          
+          <Dropdown.Item
+            as='a'
+            href='https://saa-recovery.org/meetings/'
+            target='_blank'
+          >
+            Sex Addicts Anonymous
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </div>
