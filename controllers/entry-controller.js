@@ -15,12 +15,17 @@ const createEntry = async (req, res) => {
     return res.json(entryErr);
   };
   
-  return User.findOneAndUpdate(
+  return User.update(
     {
       _id: req.user._id
     },
     {
-      $push: { entries: entryData._id }
+      $push: { 
+        entries: {
+          $each: [entryData._id],
+          $position: 0
+        }
+      }
     },
     {
       new: true
