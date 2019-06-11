@@ -1,11 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Accordion, Card } from 'react-bootstrap';
 import UserContext from '../utils/UserContext';
 import moment from 'moment';
 
 function AllInventoriesAccordian() {
 
-  const userContext = useContext(UserContext)
+  const userContext = useContext(UserContext);
+
+  useEffect(() => {
+    userContext.getEntries();
+  }, []);
 
   return (
     <Accordion>
