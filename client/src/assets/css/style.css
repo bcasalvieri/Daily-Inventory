@@ -123,22 +123,19 @@ body {
   color: #028E81;
 }
 
-.menu-button,
-.form-button {
+.menu-button {
   background-color: transparent;
   border: 2px solid #028E81;
   color: #028E81;
 }
 
-.menu-button:hover,
-.form-button:hover {
+.menu-button:hover {
   background-color: #028E81;
   border: 2px solid #028E81;
   color: whitesmoke;
 }
 
-.menu-button:active,
-.form-button:active {
+.menu-button:active {
   background-color: transparent !important;
   border: 2px solid #028E81 !important;
   color: #028E81 !important;
@@ -203,6 +200,19 @@ body {
 
 .form-check-label {
   color: #015C53;
+}
+
+.form-button {
+  width: 100px;
+  background-color: #028E81;
+  border: 2px solid #028E81;
+  color: whitesmoke;
+}
+
+.form-button:hover,
+.form-button:active {
+  background-color: #015C53 !important;
+  border: 2px solid #015C53 !important;
 }
 
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */

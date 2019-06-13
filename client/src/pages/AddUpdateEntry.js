@@ -11,6 +11,7 @@ class AddUpdateEntry extends Component {
 
   state = {
     id: '',
+    count: 0,
     resentful: false,
     resentfulNote: '',
     selfish: false,
@@ -101,7 +102,7 @@ class AddUpdateEntry extends Component {
           showConfirmButton: false,
           time: 3000
         });
-        
+
         Toast.fire({
           title: 'Inventory updated successfully!',
           type: 'success',
@@ -136,13 +137,27 @@ class AddUpdateEntry extends Component {
     });
   };
 
+  setNextQuestion = () => {
+    const count = this.state.count + 1;
+    this.setState({
+      count: count,
+    });
+  }
+
+  setPreviousQuestion = () => {
+    const count = this.state.count + 1;
+    this.setState({
+      count: count,
+    })
+  }
+
   handleFormSubmit = (event) => {
     event.preventDefault();
 
     // if entry id is present (updating an entry), run update method
     // else run the create method
     if (this.state.id) {
-       this.handleUpdateEntry(this.state.id, {
+      this.handleUpdateEntry(this.state.id, {
         resentful: this.state.resentful,
         resentfulNote: this.state.resentfulNote,
         selfish: this.state.selfish,
@@ -165,7 +180,7 @@ class AddUpdateEntry extends Component {
         sobrietyNote: this.state.sobrietyNote
       });
     } else {
-       this.handleCreateEntry({
+      this.handleCreateEntry({
         resentful: this.state.resentful,
         resentfulNote: this.state.resentfulNote,
         selfish: this.state.selfish,
@@ -197,62 +212,67 @@ class AddUpdateEntry extends Component {
       return <Redirect to='/home' />
     };
 
+    const count = this.state.count;
+    const question = questionsJSON[count];
+    let button1;
+    let button2;
+
+    if (count > 0 && count < questionsJSON.length - 1) {
+      button1 =
+        <Button className='form-button' onClick={this.setPreviousQuestion}><i class="fas fa-angle-left mr-1"></i> Prev</Button>
+    };
+
+    if (count < questionsJSON.length - 1) {
+      button2 = <Button className='ml-auto form-button' onClick={this.setNextQuestion}>Next <i className="fas fa-angle-right ml-1"></i></Button>
+    } else {
+      button2 = <Button block variant="danger" onClick={this.handleFormSubmit}>Submit</Button>
+    }
+
     return (
       <React.Fragment>
         <div className='wrapper pt-5'>
-          <Col md={{span: 8, offset: 2}} lg={{span: 6, offset: 3}}>
+          <Col md={{ span: 8, offset: 2 }} lg={{ span: 6, offset: 3 }}>
             <h2 className='add-update-header text-center mb-4'>{(this.state.id) ? "Update your inventory!" : "Add a new inventory!"}</h2>
-            <Form onSubmit={this.handleFormSubmit}>
-              {
-                questionsJSON.map(question => {
-                  return (
-                    <React.Fragment>
-                      <Form.Group className='m-0 mb-5'>
-                        <Form.Label className='form-label mr-3'>{question.question}</Form.Label>
-                        <div className='mb-3'>
-                          <Form.Check
-                            type='checkbox'
-                            key={`${question.id}-yes`}
-                            label='Yes'
-                            value='true'
-                            name={question.name}
-                            onChange={this.handleRadioInputChange}
-                            checked={this.state[question.name]}
-                            inline
-                            />
-                          <Form.Check
-                            type='checkbox'
-                            key={`${question.id}-no`}
-                            label='No'
-                            value='false'
-                            name={question.name}
-                            onChange={this.handleRadioInputChange}
-                            checked={!this.state[question.name] || this.state[question.name] === ''}
-                            inline
-                          />
-                        </div>
-                        <Form.Control
-                          as='textarea'
-                          rows='2'
-                          onChange={this.handleInputChange}
-                          name={question.note}
-                          value={this.state[question.note]}
-                          placeholder='Optional Notes'
-                          style={{borderRadius: '50px'}}
-                          className='px-4 text-box'
-                        />
-                      </Form.Group>
-                    </React.Fragment>
-                  )
-                })
-              }
-              <Button type='submit' className='form-button btn-block'>
-                {
-                  (this.state.id)
-                    ? 'Update Inventory'
-                    : 'Save Inventory'
-                }
-              </Button>
+            <Form>
+              <Form.Group>
+                <Form.Label>{question.question}</Form.Label>
+                <div className='mb-3'>
+                  <Form.Check
+                    type='checkbox'
+                    key={`${question.id}-yes`}
+                    label='Yes'
+                    value='true'
+                    name={question.name}
+                    onChange={this.handleRadioInputChange}
+                    checked={this.state[question.name]}
+                    inline
+                  />
+                  <Form.Check
+                    type='checkbox'
+                    key={`${question.id}-no`}
+                    label='No'
+                    value='false'
+                    name={question.name}
+                    onChange={this.handleRadioInputChange}
+                    checked={!this.state[question.name]}
+                    inline
+                  />
+                </div>
+                <Form.Control
+                  as='textarea'
+                  rows='2'
+                  onChange={this.handleInputChange}
+                  name={question.note}
+                  value={this.state[question.note]}
+                  placeholder='Optional Notes'
+                  style={{ borderRadius: '50px' }}
+                  className='px-4 text-box'
+                />
+              </Form.Group>
+              <div className='d-flex'>
+                {button1}
+                {button2}
+              </div>
             </Form>
           </Col>
         </div>
