@@ -5,6 +5,7 @@ import { Col, Form, Button } from 'react-bootstrap';
 import questionsJSON from '../questionsJSON';
 import '../assets/css/style.css';
 import Swal from 'sweetalert2';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 class AddUpdateEntry extends Component {
@@ -230,7 +231,15 @@ class AddUpdateEntry extends Component {
 
     return (
       <React.Fragment>
-        <div className='wrapper pt-5'>
+        <ReactCSSTransitionGroup
+          className='wrapper pt-5'
+          component='div'
+          transitionName='fade'
+          transitionEnterTimeout={800}
+          transitionLeaveTimeout={500}
+          transitionAppear
+          transitionAppearTimeout={500}
+        >
           <Col md={{ span: 8, offset: 2 }} lg={{ span: 6, offset: 3 }}>
             <h2 className='add-update-header text-center mb-4'>{(this.state.id) ? "Update your inventory!" : "Add a new inventory!"}</h2>
             <Form>
@@ -275,7 +284,7 @@ class AddUpdateEntry extends Component {
               </div>
             </Form>
           </Col>
-        </div>
+        </ReactCSSTransitionGroup>
       </React.Fragment>
     )
   }
