@@ -5,7 +5,6 @@ import { Col, Form, Button } from 'react-bootstrap';
 import questionsJSON from '../questionsJSON';
 import '../assets/css/style.css';
 import Swal from 'sweetalert2';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 class AddUpdateEntry extends Component {
@@ -235,53 +234,45 @@ class AddUpdateEntry extends Component {
           <Col md={{ span: 8, offset: 2 }} lg={{ span: 6, offset: 3 }}>
             <h2 className='add-update-header text-center mb-4'>{(this.state.id) ? "Update your inventory!" : "Add a new inventory!"}</h2>
             <Form>
-              <ReactCSSTransitionGroup
-                transitionName='fade'
-                transitionEnterTimeout={800}
-                transitionLeaveTimeout={500}
-                transitionAppear
-                transitionAppearTimeout={500}
-              >
-                <Form.Group>
-                  <Form.Label>{question.question}</Form.Label>
-                  <div className='mb-3'>
-                    <Form.Check
-                      type='checkbox'
-                      key={`${question.id}-yes`}
-                      label='Yes'
-                      value='true'
-                      name={question.name}
-                      onChange={this.handleRadioInputChange}
-                      checked={this.state[question.name]}
-                      inline
-                    />
-                    <Form.Check
-                      type='checkbox'
-                      key={`${question.id}-no`}
-                      label='No'
-                      value='false'
-                      name={question.name}
-                      onChange={this.handleRadioInputChange}
-                      checked={!this.state[question.name]}
-                      inline
-                    />
-                  </div>
-                  <Form.Control
-                    as='textarea'
-                    rows='2'
-                    onChange={this.handleInputChange}
-                    name={question.note}
-                    value={this.state[question.note]}
-                    placeholder='Optional Notes'
-                    style={{ borderRadius: '50px' }}
-                    className='px-4 text-box'
+              <Form.Group>
+                <Form.Label>{question.question}</Form.Label>
+                <div className='mb-3'>
+                  <Form.Check
+                    type='checkbox'
+                    key={`${question.id}-yes`}
+                    label='Yes'
+                    value='true'
+                    name={question.name}
+                    onChange={this.handleRadioInputChange}
+                    checked={this.state[question.name]}
+                    inline
                   />
-                </Form.Group>
-                <div className='d-flex'>
-                  {button1}
-                  {button2}
+                  <Form.Check
+                    type='checkbox'
+                    key={`${question.id}-no`}
+                    label='No'
+                    value='false'
+                    name={question.name}
+                    onChange={this.handleRadioInputChange}
+                    checked={!this.state[question.name]}
+                    inline
+                  />
                 </div>
-              </ReactCSSTransitionGroup>
+                <Form.Control
+                  as='textarea'
+                  rows='2'
+                  onChange={this.handleInputChange}
+                  name={question.note}
+                  value={this.state[question.note]}
+                  placeholder='Optional Notes'
+                  style={{ borderRadius: '50px' }}
+                  className='px-4 text-box'
+                />
+              </Form.Group>
+              <div className='d-flex'>
+                {button1}
+                {button2}
+              </div>
             </Form>
           </Col>
         </div>

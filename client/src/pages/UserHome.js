@@ -8,6 +8,7 @@ import TwelveSteps from '../components/TwelveSteps';
 import EightPrinciples from '../components/EightPrinciples';
 import SerenityPrayer from '../components/SerenityPrayer';
 import MyCarousel from '../components/MyCarousel';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class UserHome extends Component {
 
@@ -74,8 +75,16 @@ class UserHome extends Component {
                 />
               </Col>
               <Col md={8} lg={9}>
+                <ReactCSSTransitionGroup
+                  transitionName='fade'
+                  transitionEnterTimeout={800}
+                  transitionLeaveTimeout={500}
+                  transitionAppear
+                  transitionAppearTimeout={500}
+                >
                 {header}
                 {showing}
+                </ReactCSSTransitionGroup>
               </Col>
             </Row>
           </Container>

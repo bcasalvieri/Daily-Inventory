@@ -21,7 +21,7 @@ function AllInventoriesAccordian() {
                 <Accordion.Toggle
                   as={Card.Header}
                   eventKey={userContext.entries.indexOf(entry)}
-                  className='accordian-header font-weight-bold px-5'
+                  className='accordian-header font-weight-bold'
                   >
                   {moment(entry.created).format('MMMM Do, YYYY')}
                 </Accordion.Toggle>
@@ -29,11 +29,11 @@ function AllInventoriesAccordian() {
                   eventKey={userContext.entries.indexOf(entry)}
                 >
                   <Card.Body>
-                    <div className='mx-5'>
+                    <div className='mx-3'>
                     <p className='mb-0'><strong>Was I resentful?</strong> { (entry.resentful) ? "Yes" : "No" }</p>
                     <p>Notes: {entry.resentfulNote}</p>
                     <p className='mb-0'><strong>Was I selfish?</strong> { (entry.selfish) ? "Yes" : "No" }</p>
-                    <p>Notes {entry.selfishNote}</p>
+                    <p>Notes: {entry.selfishNote}</p>
                     <p className='mb-0'><strong>Was I dishonest?</strong> { (entry.dishonest) ? "Yes" : "No" }</p>
                     <p>Notes: {entry.dishonestNote}</p>
                     <p className='mb-0'><strong>Did I say or do something out of fear?</strong> { (entry.afraid) ? "Yes" : "No" }</p>
