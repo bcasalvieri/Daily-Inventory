@@ -145,7 +145,7 @@ class AddUpdateEntry extends Component {
   }
 
   setPreviousQuestion = () => {
-    const count = this.state.count + 1;
+    const count = this.state.count - 1;
     this.setState({
       count: count,
     })
