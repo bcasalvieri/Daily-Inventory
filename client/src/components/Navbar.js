@@ -17,12 +17,6 @@ function MyNavbar() {
 
   let button;
 
-  if (!userContext.isLoggedIn) {
-    button = <LoginButton />
-  } else {
-    button = <LogoutButton />
-  }
-
   return (
     <Navbar fixed='top' className='px-5' expand="md">
       <Navbar.Brand
@@ -34,7 +28,7 @@ function MyNavbar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
         <Nav>
-          {button}
+          {!userContext.isLoggedIn ? <LoginButton /> : <LogoutButton />}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
